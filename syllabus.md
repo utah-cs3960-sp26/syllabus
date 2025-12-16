@@ -8,6 +8,8 @@ CS 3960 Syllabus, Spring 2026
 **Perusall**: TODO \
 **Instructors**:
 
+| Instructor      | Email                                           | Office   | Office Hours     |
+|-----------------|-------------------------------------------------|----------|------------------|
 | John Regehr     | [regehr@cs.utah.edu](mailto:regehr@cs.utah.edu) | MEB TODO | TO:DO-TO:DO TODO |
 | Pavel Panchekha | [pavpan@cs.utah.edu](mailto:pavpan@cs.utah.edu) | MEB TODO | TO:DO-TO:DO TODO |
 | Yumeng He       | [u1528477@utah.edu](mailto:u1528477@utah.edu)   | MEB TODO | TO:DO-TO:DO TODO |
