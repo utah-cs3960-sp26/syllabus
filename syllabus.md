@@ -5,7 +5,7 @@ CS 3960 Syllabus, Spring 2026
 **Amp**: https://ampcode.com/workspaces/utah-vibecode-2025
 **Github**: TODO \
 **Piazza**: TODO \
-**Perusall**: TODO \
+**Perusall**: https://app.perusall.com/courses/cs-3960-003-vibe-coding-spring-2026/ \
 **Instructors**:
 
 | Instructor      | Email                                           | Office   | Office Hours     |
@@ -58,20 +58,19 @@ students to put significant effort into the class. With AI tools it's
 really easy to fool yourself into thinking you're almost done when
 you've just started, or that you can do the assignment quickly when
 you can't. *If you put effort into the class, you will get an A. But
-the instructors will have little patience for students trying to get
-by on minimal effort.*
+the instructors will have little patience for students trying to skate
+on minimal effort.*
 
 **Assignments**: Assignments will build large, complex applications.
-For example, the first few assignments will involve building a text
-editor. The use of AI coding tools are *mandatory*. Most assignments
-will be individual---the student and the AI---but some later ones
-might be done in groups, at instructor discretion.
+For example, the first assignment will build a text editor. AI coding
+tools are *mandatory*. Most assignments will be individual---student
+plus AI---but some later ones might be done in groups, at instructor
+discretion.
 
-Assignments will generally be cumulative, building on a large project
-week over week. Maintaining large software projects over time, without
-the AI breaking older features or making the code impossible to work
-with, is a major theme of the class. Students are encouraged not to
-fall behind.
+Assignments will build project week over week. Maintaining large
+software projects over time, without the AI breaking older features or
+making the code impossible to work with, is a major theme of the
+class. Students should not fall behind.
 
 AI tools make it easy to build brittle prototypes very quickly. What's
 hard is handling edge cases, dealing with interaction between
@@ -115,13 +114,18 @@ night) on all assignments and readings. Activities must be performed
 in class, so cannot be late, but absences can be excused by informing
 the instructors before class begins.
 
+**Rudeness**: Disruptive, belittling, or rude behavior will not be
+tolerated, including online. Punishment will vary by severity but can
+include expulsion from the class.
+
 **Cheating**: Sharing or submitting another student's code or using
 another student's prompt is cheating. Submitting code found online is
 too, but using prompts found online is fine.
 
-**Rudeness**: Disruptive, belittling, or rude behavior will not be
-tolerated, including online. Punishment will vary by severity but can
-include expulsion from the class.
+Amp records and makes available to instructors complete logs of all AI
+interactions. Instructors will examine those logs to prevent cheating.
+Absence of logged work will be grounds for failing the assignment or,
+depending on severity, the class as a whole.
 
 Please also familiarize yourself with [University policies][u-policy]
 on the ADA, safety, sexual misconduct, undocumented students,
