@@ -3,7 +3,7 @@ Lectures for CS 3960 Vibe Coding
 
 | Week   | Monday | Wenday | Friday |
 |--------|--------|--------|--------|
-| Jan  5 | 1      | A1     |        |
+| Jan  5 | 00      | A1     |        |
 | Jan 12 | B1     | A2     |        |
 | Jan 19 | ------ | *Demo* | HW1    |
 | Jan 26 | B2     | A3     |        |
@@ -20,7 +20,7 @@ Lectures for CS 3960 Vibe Coding
 | Apr 13 | E3     | E4     | HW5    |
 | Apr 20 | *Demo* | ------ | ------ |
 
-Lecture 1, *Introduction*
+Lecture 00, *Introduction*
 
 + Music: ["Opening." *Glassworks*](https://www.youtube.com/watch?v=_2vRbNehGB0)
 + Reading: [AI Can Write Your Code. It Can’t Do Your Job.](https://terriblesoftware.org/2025/12/11/ai-can-write-your-code-it-cant-do-your-job/)
