@@ -19,8 +19,6 @@ Lectures for CS 3960 Vibe Coding
 | Apr  6 | E1     | E2     |        |
 | Apr 13 | E3     | E4     | HW5    |
 | Apr 20 | *Demo* | ------ | ------ |
-| Apr 27 | ------ | ------ | ------ |
-| May  4 | Grades |        |        |
 
 Lecture 1, *Introduction*
 
