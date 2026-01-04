@@ -7,7 +7,7 @@ complex software systems.
 This repository contains written material for the class, including:
 
 * [Syllabus](syllabus.md) \
-  Course structure, rules, grading policies, and so on.
+  Course structure, grading, and policies
 * [Lectures](lectures.md) \
   Lectures and related materials, like readings
 * [Artwork](art.md) \
