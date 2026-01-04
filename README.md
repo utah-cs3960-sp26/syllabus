@@ -10,6 +10,8 @@ This repository contains written material for the class, including:
   Course structure, rules, grading policies, and so on.
 * [Lectures](lectures.md) \
   Lectures and related materials, like readings
+* [Artwork](art.md) \
+  Prompts for all artwork used in class
   
 As well as homework assignments:
 
