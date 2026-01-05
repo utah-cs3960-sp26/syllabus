@@ -43,3 +43,21 @@ releases:
 Each release's notes should be one or two paragraphs long and include
 screenshots to demonstrate new features.
 
+# Writing Release Notes
+
+Your release notes should be organized around features. For this
+assignment, the required features are those in the bulleted list
+above.
+
+For each feature, you should write about:
+
+- What about the feature works and doesn't work
+- Brag about the feature a little bit -- tell us something about how you approached it, how you solved it, or some interesting bit of your software architecture
+- How does this feature fit into the modular structure of your editor?
+- For the parts that work, explain how you know that they work. In other words, explain what kind of tests
+
+Write up your release notes as English text, using full sentences, and
+push it to the root directory of your repository using the appropriate
+file name.
+
+
