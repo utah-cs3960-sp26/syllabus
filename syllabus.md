@@ -14,7 +14,8 @@ CS 3960 Syllabus, Spring 2026
 | Pavel Panchekha | [pavpan@cs.utah.edu](mailto:pavpan@cs.utah.edu) | MEB 2174  | 10–11:00 Wed     |
 | Yumeng He       | [u1528477@utah.edu](mailto:u1528477@utah.edu)   | MEB TODO  | TO:DO-TO:DO TODO |
 
-Office hours also available by appointment.
+Office hours also available by appointment. Contact the instructors by
+Piazza, not Canvas messages or email.
 
 # About the Course
 
