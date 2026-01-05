@@ -32,14 +32,16 @@ and iterate on your vision before implementing.
 # Submission
 
 Push your work [to Github](https://github.com/utah-cs3960-sp26) and
-name your repository `textedit-uXXXXXXX`. You will make three
-releases:
+name your repository `textedit-uXXXXXXX`. You must create a
+`README.md` file in this repository with release notes. You will make
+three releases:
 
-- By 9 Jan, push `v1.md` describing your first release
-- By 16 Jan, push `v2.md` describing your second release
+- By 9 Jan, describe your first release in `README.md`
+- By 16 Jan, describe your second release in `README.md`
 - On 21 Jan, demo your text editor in class
-- By 23 Jan, push `v3.md` describing your third release
+- By 23 Jan, describe your third / final release in `README.md`
 
 Each release's notes should be one or two paragraphs long and include
-screenshots to demonstrate new features.
-
+screenshots to demonstrate new features. Use headings to distinguish
+releases. You will be graded based on the in-class demo, the release
+notes, and based on the final product.
