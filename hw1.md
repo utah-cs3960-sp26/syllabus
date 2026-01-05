@@ -11,8 +11,8 @@ remember to execute with taste and aim for quality and polish.
 # Requirements
 
 You must build a native, cross-platform text editor using the Qt
-framework in Python. Do *not* use libraries outside Qt that already
-provide these features. Besides core features (like editing,
+framework in Python. Use pytest for testing. Do *not* use other libraries
+to provide the features below. Besides core features (like editing,
 selection, opening and saving files, and so on) you must select and
 implement at least two of the following:
 
