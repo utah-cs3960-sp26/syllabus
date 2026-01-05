@@ -6,7 +6,7 @@ Due: 23 Jan
 
 In this homework assignment you will build a text editor. The exact
 architecture, UI, implementation, and features are up to you, but
-remember to execute with taste and aim for quality over quantity.
+remember to execute with taste and aim for quality and polish.
 
 # Requirements
 
@@ -15,7 +15,6 @@ framework in Python. Besides core features (like editing, selection,
 opening and saving files, and so on) you must select and implement at
 least three of the following features:
 
-- Undo/redo
 - Automatic indentation and bracket and quote matching
 - Multiple cursors and rectangular selection
 - Custom fonts, colors, and keyboard shortcuts
@@ -23,6 +22,7 @@ least three of the following features:
 - Find and replace, including multi-file find and replace
 - Multi-file support, tabs, and split views
 - A file tree explorer with collapsible folders
+- Jump to definition with an indexing system
 
 The assignment description is purposefully high-level. Draw
 inspiration from other text editors or other students' prior releases
