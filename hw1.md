@@ -11,9 +11,10 @@ remember to execute with taste and aim for quality and polish.
 # Requirements
 
 You must build a native, cross-platform text editor using the Qt
-framework in Python. Besides core features (like editing, selection,
-opening and saving files, and so on) you must select and implement at
-least three of the following features:
+framework in Python. Do *not* use libraries outside Qt that already
+provide these features. Besides core features (like editing,
+selection, opening and saving files, and so on) you must select and
+implement at least two of the following:
 
 - Automatic indentation and bracket and quote matching
 - Multiple cursors and rectangular selection
