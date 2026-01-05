@@ -22,20 +22,17 @@ Lectures for CS 3960 Vibe Coding
 
 Lecture 00, *Introduction*
 
-+ Music: ["Opening." *Glassworks*](https://www.youtube.com/watch?v=_2vRbNehGB0)
 + Reading: [AI Can Write Your Code. It Can’t Do Your Job.](https://terriblesoftware.org/2025/12/11/ai-can-write-your-code-it-cant-do-your-job/)
 + Activity: [Install Amp](https://ampcode.com/);
   create a native Qt-based text editor
 
 Lecture A1, *Testing*
 
-+ Music: ["Trial / Prison." *Einstein on the Beach*](https://www.youtube.com/watch?v=hZMjOyue1Sk)
 + Reading: [Your job is to deliver code you have proven to work](https://simonwillison.net/2025/Dec/18/code-proven-to-work/)
 + Activity: 
 
 Lecture B1, *Next-token Prediction*
 
-+ Music: ["Prophecies." *Koyaanisqatsi*](https://www.youtube.com/watch?v=Zjyqg97lj3w)
 + Reading: [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)
 + Activity: train a 2-word Markov chain on [Alice's Adventures in
   Wonderland](https://www.gutenberg.org/cache/epub/11/pg11.txt).
