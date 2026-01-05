@@ -3,7 +3,7 @@ Lectures for CS 3960 Vibe Coding
 
 | Week   | Monday | Wenday | Friday |
 |--------|--------|--------|--------|
-| Jan  5 | 00      | A1     |        |
+| Jan  5 | 00     | A1     |        |
 | Jan 12 | B1     | A2     |        |
 | Jan 19 | ------ | *Demo* | HW1    |
 | Jan 26 | B2     | A3     |        |
