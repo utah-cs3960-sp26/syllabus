@@ -32,16 +32,17 @@ and iterate on your vision before implementing.
 # Submission
 
 Push your work [to Github](https://github.com/utah-cs3960-sp26) and
-name your repository `textedit-uXXXXXXX`. You will make three
-releases:
+name your repository `textedit-uXXXXXXX`. You must create a
+`README.md` file in this repository with release notes. You will make
+three releases:
 
-- By 9 Jan, push `v1.md` describing your first release
-- By 16 Jan, push `v2.md` describing your second release
+- By 9 Jan, describe your first release in `README.md`
+- By 16 Jan, describe your second release in `README.md`
 - On 21 Jan, demo your text editor in class
-- By 23 Jan, push `v3.md` describing your third release
+- By 23 Jan, describe your third / final release in `README.md`
 
-Each release's notes should be one or two paragraphs long and include
-screenshots to demonstrate new features.
+You will be graded based on the in-class demo, the release notes, and
+based on the final product.
 
 # Writing Release Notes
 
@@ -52,12 +53,16 @@ above.
 For each feature, you should write about:
 
 - What about the feature works and doesn't work
-- Brag about the feature a little bit -- tell us something about how you approached it, how you solved it, or some interesting bit of your software architecture
+- Brag about the feature a little bit -- tell us something about how
+  you approached it, how you solved it, or some interesting bit of
+  your software architecture
 - How does this feature fit into the modular structure of your editor?
-- For the parts that work, explain how you know that they work. In other words, explain what kind of tests
+- For the parts that work, explain how you know that they work. In
+  other words, explain what kind of tests
 
-Write up your release notes as English text, using full sentences, and
-push it to the root directory of your repository using the appropriate
-file name.
+Each release's notes should be one or two paragraphs long and include
+screenshots to demonstrate new features.  These should be English
+text, using complete sentences. Use headings "R1", "R2", and "R3" to
+distinguish releases.
 
 
