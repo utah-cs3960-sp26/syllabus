@@ -41,3 +41,7 @@ Lecture 00, *Introduction*
 Lecture A1, *Testing*
 
 - [A stern Victorian gentleman with a magnifying glass examining a long table of nearly identical teacups, each with a tiny variation (chip, crack, odd handle). Assistants queue behind him holding cliboards.](art/teacups.jpeg)
+
+Lecture B1, *Next-token Prediction*
+
+- [A towering city-machine built of books, gears, type blocks, and paper tapes. Tiny humans maintain it without understanding its totality.](art/city.jpeg)
