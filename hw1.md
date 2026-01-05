@@ -48,6 +48,7 @@ based on the final product.
 
 Organize your release notes by feature, using the features we
 mentioned above. For example, "opening and saving files" is a feature.
+Things that you should talk about include:
 
 - What about the feature works and doesn't work
 - Brag about the feature a little bit -- tell us something about how
