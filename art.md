@@ -44,6 +44,7 @@ Lecture 00, *Introduction*
 - [A forest path that deliberately ends, beyond it nothing but swirling fog and unanswered branches.](art/fog.jpeg)
 - [An explorer's map drawn based on hearsay, with jungles, rivers, mountains, and coasts illustrated.](art/map.jpeg)
 - [A Victorian alchemist’s lab: bubbling glassware, notes pinned everywhere, some experiments cracked or smoking, others glowing softly. The alchemist is calmly observing, not panicking.](art/alchemist.jpeg)
+- [A wise owl or librarian behind a lectern (instructor / office hours).](art/owl.jpeg)
 - [A formal English garden with paths and hedges, clearly laid out, but with one hedge trimmed into a whimsical shape.](art/garden.jpeg)
 - [An enormous scroll, miles long, a ribbon stretching over bluffs and dales.](art/scroll.jpeg)
 - [A pair of figures jointly drafting a blueprint on a long table—one pointing, the other refining lines—no hierarchy implied.](art/together.jpeg)
