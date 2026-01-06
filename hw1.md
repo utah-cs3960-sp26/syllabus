@@ -1,7 +1,7 @@
 CS 3960 Homework 1
 ------------------
 
-Status: *draft* \
+Status: final \
 Due: 23 Jan
 
 In this homework assignment you will build a text editor. The exact
