@@ -12,8 +12,9 @@ CS 3960 Syllabus, Spring 2026
 |-----------------|-------------------------------------------------|-----------|------------------|
 | John Regehr     | [regehr@cs.utah.edu](mailto:regehr@cs.utah.edu) | MEB 3190G | 9:30-10:30 Mon   |
 | Pavel Panchekha | [pavpan@cs.utah.edu](mailto:pavpan@cs.utah.edu) | MEB 2174  | 10–11:00 Wed     |
-| Yumeng He       | [u1528477@utah.edu](mailto:u1528477@utah.edu)   | MEB TODO  | TO:DO-TO:DO TODO |
+| Yumeng He       | [u1528477@utah.edu](mailto:u1528477@utah.edu)   | CADE Lab  | 10:30-11:30 Fri  |
 
+Regular TA office hours will begin the week of Jan 19. 
 Office hours also available by appointment. Contact the instructors by
 Piazza, not Canvas messages or email.
 
