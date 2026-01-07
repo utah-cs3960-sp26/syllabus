@@ -59,9 +59,9 @@ Things that you should talk about include:
   other words, explain what kind of tests you are using to validate
   the functionality of your editor.
 
-Each release's notes should be one or two paragraphs long and include
-screenshots to demonstrate new features.  These should be English
-text, using complete sentences. Use headings "R1", "R2", and "R3" to
-distinguish releases.
+You don't need to write a ton; one or two paragraphs is enough. These
+should be English text, using complete sentences. Include screenshots
+to brag about what you've done. All the releases go in one document;
+use headings "R1", "R2", and "R3" to separate them.
 
 
