@@ -25,11 +25,10 @@ Lecture 00, *Introduction*
 + Reading: [AI Can Write Your Code. It Can’t Do Your Job.](https://terriblesoftware.org/2025/12/11/ai-can-write-your-code-it-cant-do-your-job/)
 + Activity: [Install Amp](https://ampcode.com/);
   create a native Qt-based text editor
-
-Lecture A1, *Testing*
-
-+ Reading: [Your job is to deliver code you have proven to work](https://simonwillison.net/2025/Dec/18/code-proven-to-work/)
-+ Activity: 
+  
+Lecture A1, *Software Engineering*
++ Reading: none
++ Activity: discussion
 
 Lecture B1, *Next-token Prediction*
 
@@ -39,7 +38,10 @@ Lecture B1, *Next-token Prediction*
   Implement a next-word predictor similar to the professor's. Try
   completing various (in-genre) sentences.
 
-Lecture A2
+Lecture A2, *Testing*
+
++ Reading: [Your job is to deliver code you have proven to work](https://simonwillison.net/2025/Dec/18/code-proven-to-work/)
++ Activity: 
 
 Lecture B2, *Fine-tuning*
 
