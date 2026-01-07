@@ -1,7 +1,7 @@
 CS 3960 Homework 1
 ------------------
 
-Status: *draft* \
+Status: final \
 Due: 23 Jan
 
 In this homework assignment you will build a text editor. The exact
@@ -13,8 +13,8 @@ remember to execute with taste and aim for quality and polish.
 You must build a native, cross-platform text editor using the Qt
 framework in Python. Use pytest for testing. Do *not* use other libraries
 to provide the features below. Besides core features (like editing,
-selection, opening and saving files, and so on) you must select and
-implement at least two of the following:
+selection, opening and saving files, keyboard shortcuts, and so on)
+you must select and implement at least two of the following:
 
 - Automatic indentation and bracket and quote matching
 - Multiple cursors and rectangular selection
@@ -36,30 +36,28 @@ name your repository `textedit-uXXXXXXX`. You must create a
 `README.md` file in this repository with release notes. You will make
 three releases:
 
-- By 9 Jan, describe your first release in `README.md`
-- By 16 Jan, describe your second release in `README.md`
+- By 9 Jan, describe your first release under the "R1" heading in `README.md`
+- By 16 Jan, describe your second release under the "R2" heading in `README.md`
 - On 21 Jan, demo your text editor in class
-- By 23 Jan, describe your third / final release in `README.md`
+- By 23 Jan, describe your third / final release under a "R3" heading in `README.md`
 
 You will be graded based on the in-class demo, the release notes, and
 based on the final product.
 
 # Writing Release Notes
 
-Your release notes should be organized around features. For this
-assignment, the required features are those in the bulleted list
-above. We expect you to do one a week, but if you want to pursue them
-in parallel that's also fine.
-
-For each feature, you should write about:
+Organize your release notes by feature, using the features we
+mentioned above. For example, "opening and saving files" is a feature.
+Things that you should talk about include:
 
 - What about the feature works and doesn't work
 - Brag about the feature a little bit -- tell us something about how
   you approached it, how you solved it, or some interesting bit of
   your software architecture
 - How does this feature fit into the modular structure of your editor?
-- For the parts that work, explain how you know that they work. In
-  other words, explain what kind of tests
+- For the parts that work, explain how you know that they work as intended.
+  other words, explain what kind of tests you are using to validate
+  the functionality of your editor.
 
 You don't need to write a ton; one or two paragraphs is enough. These
 should be English text, using complete sentences. Include screenshots

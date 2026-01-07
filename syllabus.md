@@ -5,15 +5,16 @@ CS 3960 Syllabus, Spring 2026
 **Amp**: https://ampcode.com/workspaces/utah-vibecode-2025
 **Github**: https://github.com/utah-cs3960-sp26/ \
 **Piazza**: https://piazza.com/class/mk05dhbwsky78r \
-**Perusall**: https://app.perusall.com/courses/cs-3960-003-spring-2026-vibe-coding/_/library \
+<!-- **Perusall**: https://app.perusall.com/courses/cs-3960-003-spring-2026-vibe-coding/_/library \ -->
 **Instructors**:
 
 | Instructor      | Email                                           | Office    | Office Hours     |
 |-----------------|-------------------------------------------------|-----------|------------------|
 | John Regehr     | [regehr@cs.utah.edu](mailto:regehr@cs.utah.edu) | MEB 3190G | 9:30-10:30 Mon   |
 | Pavel Panchekha | [pavpan@cs.utah.edu](mailto:pavpan@cs.utah.edu) | MEB 2174  | 10–11:00 Wed     |
-| Yumeng He       | [u1528477@utah.edu](mailto:u1528477@utah.edu)   | MEB TODO  | TO:DO-TO:DO TODO |
+| Yumeng He       | [u1528477@utah.edu](mailto:u1528477@utah.edu)   | CADE Lab  | 10:30-11:30 Fri  |
 
+Regular TA office hours will begin the week of Jan 19. 
 Office hours also available by appointment. Contact the instructors by
 Piazza, not Canvas messages or email.
 
@@ -47,8 +48,10 @@ and if those run out, Amp has a free mode that students can use.
 
 **Piazza**: Students will use Piazza for questions.
 
+<!--
 **Perusall**: We will use Perusall for readings; students will comment
 on readings and discuss with other students.
+-->
 
 **Github**: All assignments will be completed and turned in on Github.
 
@@ -93,7 +96,7 @@ inform the instructors before class for it to be excused.
 so workflows and knowledge evolve and learning from others is key.
 Readings will cover a variety of topics but focused on effective use
 of AI coding agents. Students must do the reading and leave comments
-in Perusall.
+in <!-- Perusall --> Github.
 
 # Topics
 
