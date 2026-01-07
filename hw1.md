@@ -48,7 +48,8 @@ based on the final product.
 
 Your release notes should be organized around features. For this
 assignment, the required features are those in the bulleted list
-above.
+above. We expect you to do one a week, but if you want to pursue them
+in parallel that's also fine.
 
 For each feature, you should write about:
 
@@ -60,9 +61,9 @@ For each feature, you should write about:
 - For the parts that work, explain how you know that they work. In
   other words, explain what kind of tests
 
-Each release's notes should be one or two paragraphs long and include
-screenshots to demonstrate new features.  These should be English
-text, using complete sentences. Use headings "R1", "R2", and "R3" to
-distinguish releases.
+You don't need to write a ton; one or two paragraphs is enough. These
+should be English text, using complete sentences. Include screenshots
+to brag about what you've done. All the releases go in one document;
+use headings "R1", "R2", and "R3" to separate them.
 
 
