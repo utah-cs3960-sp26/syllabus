@@ -37,6 +37,25 @@ Lecture B1, *Next-token Prediction*
   Wonderland](https://www.gutenberg.org/cache/epub/11/pg11.txt).
   Implement a next-word predictor similar to the professor's. Try
   completing various (in-genre) sentences.
++ Optional reading: [A Mathematical Theory of
+  Communication](https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf) \
+  This 1948 monograph by Claude Shannon invented information theory,
+  and notably focused on language modeling as its example. Page 5
+  introduces the basic idea of language modeling from tokens, and
+  pages 6-7 introduce Markov chain models (as in our activity; Shannon
+  spells it Markoff) for English. Pages 14-15 describe his experiments
+  to test how well humans do at language modeling tasks.
++ Optional reading: [Attention is All You
+  Need](https://arxiv.org/pdf/1706.03762) \
+  This 2017 paper (known by its title) introduced the "attention"
+  mechanism and used it to do language modeling (specifically for
+  translation). It might be the most important AI paper ever written.
+  Section 3.2.1 gives the math behind attention. Section 5.1 (short)
+  describes their (tiny by modern standards) training corpus.
++ Optional reading: [Training Compute-Optimal
+  LLMs](https://arxiv.org/pdf/2203.15556) \
+  This 2022 paper (known as "Chinchilla") identifies "scaling laws"
+  whereby larger models trained on more tokens have better quality
 
 Lecture A2, *Testing*
 
