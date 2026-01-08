@@ -43,8 +43,13 @@ Lecture B1, *Next-token Prediction*
   and notably focused on language modeling as its example. Page 5
   introduces the basic idea of language modeling from tokens, and
   pages 6-7 introduce Markov chain models (as in our activity; Shannon
-  spells it Markoff) for English. Pages 14-15 describe his experiments
-  to test how well humans do at language modeling tasks.
+  spells it Markoff) for English. Most of the rest is math.
++ Optional reading: [Prediction and Entropy of Printed
+  English](https://www.princeton.edu/~wbialek/rome/refs/shannon_51.pdf) \
+  This 1950 manuscript by Claude Shannon described his experiments
+  measuring how well humans do at language modeling. Modern LLMs are
+  trained using strikingly similar methods (and do as well or better
+  than humans).
 + Optional reading: [Attention is All You
   Need](https://arxiv.org/pdf/1706.03762) \
   This 2017 paper (known by its title) introduced the "attention"
