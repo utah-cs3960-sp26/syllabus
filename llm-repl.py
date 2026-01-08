@@ -60,7 +60,7 @@ def show_topk_next_token(outputs, k=5):
     for prob, token in zip(top_probs, top_indices):
         print(f"{quote_token(tok2str(token)):>15s} : {prob*100:.2f}%")
 
-def generate_with_cache(inputs, max_new_tokens=20):
+def generate_with_cache(inputs, max_new_tokens=20, do_sample=False, temperature=1.0):
     generated = inputs["input_ids"]
     attention_mask = inputs["attention_mask"]
     past_key_values = None
@@ -74,7 +74,14 @@ def generate_with_cache(inputs, max_new_tokens=20):
                 past_key_values=past_key_values,
             )
         past_key_values = outputs.past_key_values
-        next_token = torch.argmax(outputs.logits[:, -1], dim=-1, keepdim=True)
+        logits = outputs.logits[:, -1]
+        if do_sample:
+            logits = logits / max(temperature, 1e-6)
+            probs = torch.softmax(logits, dim=-1)
+            probs = torch.nan_to_num(probs, nan=0.0, posinf=0.0, neginf=0.0)
+            next_token = torch.multinomial(probs, num_samples=1)
+        else:
+            next_token = torch.argmax(logits, dim=-1, keepdim=True)
         generated = torch.cat([generated, next_token], dim=-1)
         attention_mask = torch.cat(
             [attention_mask, torch.ones_like(next_token, device=attention_mask.device)],
@@ -105,6 +112,10 @@ def show_tokens(text):
     tokens = [tok2str(i) for i in inputs["input_ids"][0]]
     entries = [f"{idx}:{quote_token(tok)}" for idx, tok in enumerate(tokens)]
     print("Tokens:", "[" + ", ".join(entries) + "]")
+
+def format_token_list(token_ids):
+    items = [quote_token(tok2str(i)) for i in token_ids]
+    return "[" + ", ".join(items) + "]"
 
 def show_next(text, k):
     inputs = tokenize_text(text)
@@ -186,13 +197,25 @@ def show_pattern(text, layer_id):
 def show_gen(text, count):
     inputs = tokenize_text(text)
     base_len = inputs["input_ids"].shape[1]
-    generated = generate_with_cache(inputs, max_new_tokens=count)
+    generated = generate_with_cache(inputs, max_new_tokens=count, do_sample=False)
     new_tokens = generated[0, base_len:]
-    new_text = tokenizer.decode(new_tokens, skip_special_tokens=True)
-    full_text = tokenizer.decode(generated[0], skip_special_tokens=True)
+    new_text = format_token_list([int(i) for i in new_tokens])
     print("Generated:")
-    print(display_ws(new_text))
-    return full_text
+    print(new_text)
+    return None
+
+def show_variations(text, count, tokens_per=10):
+    inputs = tokenize_text(text)
+    base_len = inputs["input_ids"].shape[1]
+    for idx in range(count):
+        generated = generate_with_cache(
+            inputs,
+            max_new_tokens=tokens_per,
+            do_sample=True,
+            temperature=1.0,
+        )
+        new_tokens = generated[0, base_len:]
+        print(f"{idx + 1}: {format_token_list([int(i) for i in new_tokens])}")
 
 def print_help():
     print("Commands:")
@@ -203,6 +226,7 @@ def print_help():
     print("  attn <idx>        Per-layer attention (28 cols) for each row j to column idx.")
     print("  pattern <layer>   NxN attention for a layer (avg heads).")
     print("  gen <count>       Generate tokens (greedy).")
+    print("  variations <n>    N sampled completions (10 tokens each).")
     print("  help             Show this help.")
     print("  quit/exit         Leave the REPL.")
 
@@ -301,7 +325,20 @@ while True:
             print("Usage: gen <count>")
             continue
         count = int(arg)
-        context = show_gen(context, count)
+        show_gen(context, count)
+        continue
+    if cmd == "variations":
+        if context == "":
+            print("No context loaded. Use `load` or `add`.")
+            continue
+        if not arg:
+            print("Usage: variations <n>")
+            continue
+        if not arg.isdigit():
+            print("Usage: variations <n>")
+            continue
+        count = int(arg)
+        show_variations(context, count, tokens_per=10)
         continue
 
     print("Unknown command. Type `help` for commands.")
