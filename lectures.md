@@ -33,6 +33,13 @@ Lecture A1, *Software Engineering*
 Lecture B1, *Next-token Prediction*
 
 + Reading: [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)
++ Demo: [llm-repl.py](llm-repl.py) \
+  If you [install `uv`](https://docs.astral.sh/uv/getting-started/installation/)
+  you can download this script and run it with `uv run llm-repl.py`.
+  It'll take a long time to start (it needs to download a large model)
+  but once it does you'll see `>>` and you can type `help` to see
+  the list of available commands. We used this in class to show how
+  next-token prediction is used to generate text.
 + Activity: train a 2-word Markov chain on [Alice's Adventures in
   Wonderland](https://www.gutenberg.org/cache/epub/11/pg11.txt).
   Implement a next-word predictor similar to the professor's. Try
