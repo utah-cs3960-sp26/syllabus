@@ -56,12 +56,24 @@ Lecture 00, *Introduction*
 
 Lecture A1, *Software Engineering*
 
-+ Music: ["Trial / Prison." *Einstein on the Beach*](https://www.youtube.com/watch?v=hZMjOyue1Sk)
-- [A stern Victorian gentleman with a magnifying glass examining a long table of nearly identical teacups, each with a tiny variation (chip, crack, odd handle). Assistants queue behind him holding cliboards.](art/teacups.jpeg)
+- Music: ["Facades." *Glassworks*](https://www.youtube.com/watch?v=D6TJvasFH0I)
+- [I want a tortoise and a hare racing, and I want 1:2 aspect ratio. 1000x1000 pixel resolution.]/art/tortoise.jpeg)
 
 Lecture B1, *Next-token Prediction*
 
-- [I want a tortoise and a hare racing, and I want 1:2 aspect ratio. 1000x1000 pixel resolution.]/art/tortoise.jpeg)
+- Music: ["The Grid." *Koyaanisqatsi*](https://www.youtube.com/watch?v=SegECuY22Rs)
 
-+ Music: ["Prophecies." *Koyaanisqatsi*](https://www.youtube.com/watch?v=Zjyqg97lj3w)
 - [A towering city-machine built of books, gears, type blocks, and paper tapes. Tiny humans maintain it without understanding its totality.](art/city.jpeg)
+
+Lecture A2, *Testing*
+
+- Music: ["Trial / Prison." *Einstein on the Beach*](https://www.youtube.com/watch?v=hZMjOyue1Sk)
+- [A stern Victorian gentleman with a magnifying glass examining a long table of nearly identical teacups, each with a tiny variation (chip, crack, odd handle). Assistants queue behind him holding cliboards.](art/teacups.jpeg)
+
+Lecture B2, *Fine-tuning*
+
+- Music: ["Pruit Igoe." *Koyaanisqatsi*](https://www.youtube.com/watch?v=LF-YT5UhB9g)
+
+Lecture B3, *Agents*
+
+- Music: ["Prophecies." *Koyaanisqatsi*](https://www.youtube.com/watch?v=Zjyqg97lj3w)

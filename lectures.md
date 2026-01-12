@@ -1,24 +1,24 @@
 Lectures for CS 3960 Vibe Coding
 ================================
 
-| Week   | Monday | Wednesday | Friday |
-|--------|--------|--------|--------|
-| Jan  5 | 00     | A1     | release notes 1       |
-| Jan 12 | B1     | A2     | release notes 2       |
-| Jan 19 | ------ | *Demo* | HW1    |
-| Jan 26 | B2     | A3     |        |
-| Feb  2 | B3     | A4     |        |
-| Feb  9 | *Demo* | C1     | HW2    |
-| Feb 16 | ------ | D1     |        |
-| Feb 23 | C2     | D2     |        |
-| Mar  2 | *Demo* | D3     | HW3    |
-| Mar  9 | C3     | D4     |        |
-| Mar 16 | ------ | ------ | ------ |
-| Mar 23 | C4     | D5     |        |
-| Mar 30 | C5     | *Demo* | HW4    |
-| Apr  6 | E1     | E2     |        |
-| Apr 13 | E3     | E4     | HW5    |
-| Apr 20 | *Demo* | ------ | ------ |
+| Week   | Monday | Wednesday | Friday          |
+|--------|--------|-----------|-----------------|
+| Jan  5 | 00     | A1        | release notes 1 |
+| Jan 12 | B1     | A2        | release notes 2 |
+| Jan 19 | ------ | *Demo*    | HW1             |
+| Jan 26 | B2     | A3        |                 |
+| Feb  2 | B3     | A4        |                 |
+| Feb  9 | *Demo* | C1        | HW2             |
+| Feb 16 | ------ | D1        |                 |
+| Feb 23 | C2     | D2        |                 |
+| Mar  2 | *Demo* | D3        | HW3             |
+| Mar  9 | C3     | D4        |                 |
+| Mar 16 | ------ | ------    | ------          |
+| Mar 23 | C4     | D5        |                 |
+| Mar 30 | C5     | *Demo*    | HW4             |
+| Apr  6 | E1     | E2        |                 |
+| Apr 13 | E3     | E4        | HW5             |
+| Apr 20 | *Demo* | ------    | ------          |
 
 Lecture 00, *Introduction*
 
