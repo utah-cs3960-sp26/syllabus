@@ -64,4 +64,19 @@ should be English text, using complete sentences. Include screenshots
 to brag about what you've done. All the releases go in one document;
 use headings "R1", "R2", and "R3" to separate them.
 
+# Demo Day
 
+Show up ready to run your text editor. The instructors will walk
+between the tables and ask you to do various things like:
+
+- Doing some sequence of operations to see what happens (say, what
+  happens if you open a different file and then press undo)
+- Answer questions about your implementation decisions (for multi-file
+  support, what data structure stores the set of open files)
+- Show off particular features (what format do you use for describing
+  syntax highlighting definitions)
+- Talk through design choices (what features does your file tree
+  explorer support and which did you discard?)
+
+Expect to spend a few minutes demoing your text editor. This will
+count toward your grade.
