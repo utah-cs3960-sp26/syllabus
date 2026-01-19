@@ -50,14 +50,14 @@ Organize your release notes by feature, using the features we
 mentioned above. For example, "opening and saving files" is a feature.
 Things that you should talk about include:
 
-- What about the feature works and doesn't work
-- Brag about the feature a little bit -- tell us something about how
-  you approached it, how you solved it, or some interesting bit of
-  your software architecture
-- How does this feature fit into the modular structure of your editor?
-- For the parts that work, explain how you know that they work as intended.
-  other words, explain what kind of tests you are using to validate
-  the functionality of your editor.
+1. What about the feature works and doesn't work
+2. Brag about the feature a little bit -- tell us something about how
+   you approached it, how you solved it, or some interesting bit of
+   your software architecture
+3. How does this feature fit into the modular structure of your editor?
+4. For the parts that work, explain how you know that they work as intended.
+   other words, explain what kind of tests you are using to validate
+   the functionality of your editor.
 
 You don't need to write a ton; one or two paragraphs is enough. These
 should be English text, using complete sentences. Include screenshots
