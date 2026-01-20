@@ -2,6 +2,7 @@
 # dependencies = ["torch", "transformers"]
 # ///
 import argparse
+import shlex
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -9,9 +10,19 @@ parser = argparse.ArgumentParser(
     description="Qwen REPL: tokens, next-token probs, attentions, generation."
 )
 parser.add_argument(
-    "--model",
+    "--base-model",
+    default="Qwen/Qwen2.5-1.5B",
+    help="Base model name or local path.",
+)
+parser.add_argument(
+    "--chat-model",
     default="Qwen/Qwen2.5-1.5B-Instruct",
-    help="Model name or local path.",
+    help="Chat/instruct model name or local path.",
+)
+parser.add_argument(
+    "--model",
+    dest="base_model",
+    help="Alias for --base-model.",
 )
 parser.add_argument("--top-k", type=int, default=5, help="Default top-k for `next`.")
 parser.add_argument(
@@ -25,19 +36,32 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
-model_name = args.model
-tokenizer = AutoTokenizer.from_pretrained(model_name)
+base_model_name = args.base_model
+chat_model_name = args.chat_model
 
 use_mps = torch.backends.mps.is_available()
 device = torch.device("mps" if use_mps else "cpu")
 dtype = torch.float32
 
-model = AutoModelForCausalLM.from_pretrained(model_name, dtype=dtype)
-model.to(device)
 attn_impl = args.attn_impl
-if attn_impl != "auto":
-    model.set_attn_implementation(attn_impl)
-model.eval()
+tokenizer = None
+model = None
+model_name = None
+
+def load_model(name):
+    global tokenizer, model, model_name
+    model_name = name
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model_kwargs = {"dtype": dtype}
+    if attn_impl != "auto":
+        model_kwargs["attn_implementation"] = attn_impl
+    model = AutoModelForCausalLM.from_pretrained(model_name, **model_kwargs)
+    model.to(device)
+    if attn_impl != "auto":
+        model.set_attn_implementation(attn_impl)
+    model.eval()
+
+load_model(base_model_name)
 
 # Normalize whitespace for display (Qwen uses a mix of token markers).
 def display_ws(text):
@@ -89,8 +113,33 @@ def generate_with_cache(inputs, max_new_tokens=20, do_sample=False, temperature=
         )
     return generated
 
+def generate_with_cache_until(inputs, max_new_tokens, stop_ids):
+    generated = inputs["input_ids"]
+    attention_mask = inputs["attention_mask"]
+    past_key_values = None
+
+    for _ in range(max_new_tokens):
+        with torch.no_grad():
+            outputs = model(
+                input_ids=generated if past_key_values is None else generated[:, -1:],
+                attention_mask=attention_mask,
+                use_cache=True,
+                past_key_values=past_key_values,
+            )
+        past_key_values = outputs.past_key_values
+        logits = outputs.logits[:, -1]
+        next_token = torch.argmax(logits, dim=-1, keepdim=True)
+        generated = torch.cat([generated, next_token], dim=-1)
+        attention_mask = torch.cat(
+            [attention_mask, torch.ones_like(next_token, device=attention_mask.device)],
+            dim=-1,
+        )
+        if stop_ids and int(next_token.item()) in stop_ids:
+            break
+    return generated
+
 def apply_escapes(text):
-    return text.replace("\\n", "\n").replace("\\s", " ")
+    return text.replace("\\n", "\n")
 
 def strip_wrapping_quotes(text):
     if len(text) >= 2 and text[0] == text[-1] and text[0] in ("'", '"'):
@@ -101,7 +150,10 @@ def parse_text_arg(raw):
     raw = raw.lstrip()
     if not raw:
         return ""
-    return apply_escapes(strip_wrapping_quotes(raw))
+    parts = shlex.split(raw, posix=True)
+    if not parts:
+        return ""
+    return apply_escapes(" ".join(parts))
 
 def tokenize_text(text):
     inputs = tokenizer(text, return_tensors="pt")
@@ -197,11 +249,30 @@ def show_pattern(text, layer_id):
 def show_gen(text, count):
     inputs = tokenize_text(text)
     base_len = inputs["input_ids"].shape[1]
-    generated = generate_with_cache(inputs, max_new_tokens=count, do_sample=False)
+    stop_ids = []
+    if count is None:
+        im_end_id = tokenizer.convert_tokens_to_ids("<|im_end|>")
+        if im_end_id is not None and im_end_id != tokenizer.unk_token_id:
+            stop_ids = [int(im_end_id)]
+        elif tokenizer.eos_token_id is not None:
+            stop_ids = [int(tokenizer.eos_token_id)]
+        generated = generate_with_cache_until(
+            inputs,
+            max_new_tokens=args.max_new_tokens,
+            stop_ids=stop_ids,
+        )
+    else:
+        generated = generate_with_cache(inputs, max_new_tokens=count, do_sample=False)
     new_tokens = generated[0, base_len:]
-    new_text = format_token_list([int(i) for i in new_tokens])
+    token_ids = [int(i) for i in new_tokens]
+    if stop_ids and token_ids and token_ids[-1] in stop_ids:
+        token_ids = token_ids[:-1]
     print("Generated:")
-    print(new_text)
+    if mode == "chat":
+        text_out = tokenizer.decode(token_ids, clean_up_tokenization_spaces=False)
+        print(text_out.replace("\r", ""))
+    else:
+        print(format_token_list(token_ids))
     return None
 
 def show_variations(text, count, tokens_per=10):
@@ -221,17 +292,81 @@ def print_help():
     print("Commands:")
     print('  load "text ..."   Replace the context.')
     print('  add "text ..."    Append to the context.')
+    print("  status           Show current model, mode, and context.")
+    print("  model <chat|base> Set mode and load the matching model.")
+    print("  msg <role> <text> Add a message (roles: system/user/assistant).")
+    print("  msg add <text>    Append to the last message.")
+    print("  msg clear         Clear all messages.")
+    print("  template         Show the tokenizer's chat template.")
+    print("  messages         Show current message list.")
     print("  tokens           Show tokens with indices.")
     print("  next [k]          Show top-k next-token probabilities.")
     print("  attn <idx>        Per-layer attention (28 cols) for each row j to column idx.")
     print("  pattern <layer>   NxN attention for a layer (avg heads).")
-    print("  gen <count>       Generate tokens (greedy).")
+    print("  gen [count]       Generate tokens (greedy, default: until <|im_end|>).")
     print("  variations <n>    N sampled completions (10 tokens each).")
     print("  help             Show this help.")
     print("  quit/exit         Leave the REPL.")
 
 context = ""
-print(f"Qwen REPL (model: {model_name}). Type `help` for commands.")
+messages = []
+mode = "base"
+
+def get_effective_messages():
+    if messages:
+        return messages, False
+    if context:
+        return [{"role": "user", "content": context}], True
+    return [], False
+
+def get_current_context():
+    if mode == "chat":
+        msg_list, _ = get_effective_messages()
+        if not msg_list:
+            return ""
+        return tokenizer.apply_chat_template(
+            msg_list,
+            tokenize=False,
+            add_generation_prompt=True,
+        )
+    return context
+
+def show_messages():
+    msg_list, synthetic = get_effective_messages()
+    if not msg_list:
+        print("No messages.")
+        return
+    if synthetic:
+        print("Messages (synthetic from context):")
+    else:
+        print("Messages:")
+    for idx, msg in enumerate(msg_list):
+        role = msg.get("role", "unknown")
+        content = display_ws(msg.get("content", ""))
+        print(f"{idx}: {role}: {content}")
+
+def count_base_tokens(text):
+    if not text:
+        return 0
+    return len(tokenizer(text, add_special_tokens=False)["input_ids"])
+
+def build_status_line():
+    if mode == "chat":
+        msg_list, _ = get_effective_messages()
+        msg_count = len(msg_list)
+        return f"LLM REPL (chat mode, {model_name}, {msg_count} message context)"
+    token_count = count_base_tokens(context)
+    return f"LLM REPL (base mode, {model_name}, {token_count} token context)"
+
+def show_status():
+    current = get_current_context()
+    print(build_status_line())
+    if current:
+        print("Context:")
+        print(current)
+
+print(build_status_line())
+print("Type `help` for commands.")
 while True:
     try:
         raw = input(">> ")
@@ -245,6 +380,21 @@ while True:
         break
     if lower == "help":
         print_help()
+        continue
+    if lower == "status":
+        show_status()
+        continue
+    if lower == "messages":
+        show_messages()
+        continue
+    if lower == "template":
+        if mode != "chat":
+            print("Chat template is only available in chat mode. Use `model chat`.")
+            continue
+        if tokenizer.chat_template is None:
+            print("No chat template available.")
+        else:
+            print(tokenizer.chat_template)
         continue
 
     if lower == "load" or lower.startswith("load "):
@@ -271,15 +421,65 @@ while True:
     cmd = parts[0].lower()
     arg = parts[1] if len(parts) > 1 else ""
 
-    if cmd == "tokens":
-        if context == "":
-            print("No context loaded. Use `load` or `add`.")
+    if cmd == "model":
+        if not arg:
+            print("Usage: model <chat|base>")
             continue
-        show_tokens(context)
+        if arg not in ("chat", "base"):
+            print("Usage: model <chat|base>")
+            continue
+        mode = arg
+        target_model = chat_model_name if mode == "chat" else base_model_name
+        if model_name != target_model:
+            load_model(target_model)
+        context = ""
+        messages = []
+        print(f"Mode set to {mode}. Active model: {model_name}. Context cleared.")
+        continue
+    if cmd == "msg":
+        if not arg:
+            print("Usage: msg <system|user|assistant> <text> | msg add <text>")
+            continue
+        subparts = arg.split(maxsplit=1)
+        subcmd = subparts[0].lower()
+        rest = subparts[1] if len(subparts) > 1 else ""
+        if subcmd in ("system", "user", "assistant"):
+            text = parse_text_arg(rest)
+            messages.append({"role": subcmd, "content": text})
+            print(f"Message added: {subcmd}.")
+            continue
+        if subcmd == "add":
+            if not messages:
+                print("No messages to add to.")
+                continue
+            text = parse_text_arg(rest)
+            messages[-1]["content"] = messages[-1].get("content", "") + text
+            print("Message updated.")
+            continue
+        if subcmd == "clear":
+            messages = []
+            print("Messages cleared.")
+            continue
+        print("Usage: msg <system|user|assistant> <text> | msg add <text>")
+        continue
+
+    if cmd == "tokens":
+        current = get_current_context()
+        if current == "":
+            if mode == "chat":
+                print("No messages available for chat mode.")
+            else:
+                print("No context loaded. Use `load` or `add`.")
+            continue
+        show_tokens(current)
         continue
     if cmd == "next":
-        if context == "":
-            print("No context loaded. Use `load` or `add`.")
+        current = get_current_context()
+        if current == "":
+            if mode == "chat":
+                print("No messages available for chat mode.")
+            else:
+                print("No context loaded. Use `load` or `add`.")
             continue
         k = args.top_k
         if arg:
@@ -288,11 +488,15 @@ while True:
             else:
                 print("Usage: next [k]")
                 continue
-        show_next(context, k=k)
+        show_next(current, k=k)
         continue
     if cmd == "attn":
-        if context == "":
-            print("No context loaded. Use `load` or `add`.")
+        current = get_current_context()
+        if current == "":
+            if mode == "chat":
+                print("No messages available for chat mode.")
+            else:
+                print("No context loaded. Use `load` or `add`.")
             continue
         if not arg:
             print("Usage: attn <idx>")
@@ -300,11 +504,15 @@ while True:
         if not arg.isdigit():
             print("Usage: attn <idx>")
             continue
-        show_attn(context, int(arg))
+        show_attn(current, int(arg))
         continue
     if cmd == "pattern":
-        if context == "":
-            print("No context loaded. Use `load` or `add`.")
+        current = get_current_context()
+        if current == "":
+            if mode == "chat":
+                print("No messages available for chat mode.")
+            else:
+                print("No context loaded. Use `load` or `add`.")
             continue
         if not arg:
             print("Usage: pattern <layer>")
@@ -312,24 +520,31 @@ while True:
         if not arg.isdigit():
             print("Usage: pattern <layer>")
             continue
-        show_pattern(context, int(arg))
+        show_pattern(current, int(arg))
         continue
     if cmd == "gen":
-        if context == "":
-            print("No context loaded. Use `load` or `add`.")
+        current = get_current_context()
+        if current == "":
+            if mode == "chat":
+                print("No messages available for chat mode.")
+            else:
+                print("No context loaded. Use `load` or `add`.")
             continue
         if not arg:
-            print("Usage: gen <count>")
+            show_gen(current, None)
             continue
         if not arg.isdigit():
-            print("Usage: gen <count>")
+            print("Usage: gen [count]")
             continue
-        count = int(arg)
-        show_gen(context, count)
+        show_gen(current, int(arg))
         continue
     if cmd == "variations":
-        if context == "":
-            print("No context loaded. Use `load` or `add`.")
+        current = get_current_context()
+        if current == "":
+            if mode == "chat":
+                print("No messages available for chat mode.")
+            else:
+                print("No context loaded. Use `load` or `add`.")
             continue
         if not arg:
             print("Usage: variations <n>")
@@ -338,7 +553,7 @@ while True:
             print("Usage: variations <n>")
             continue
         count = int(arg)
-        show_variations(context, count, tokens_per=10)
+        show_variations(current, count, tokens_per=10)
         continue
 
     print("Unknown command. Type `help` for commands.")
