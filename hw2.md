@@ -11,7 +11,8 @@ In this assignment you will continue to work on text editors.
 ## Week 4
 
 BEFORE YOU START: Make sure your README.md includes the necessary
-instructions telling people how to run your text editor.
+instructions telling people how to run your text editor. Someone else
+will need to run it now.
 
 This week, you will not be working on your own text editor, but rather
 on the editor belonging to the student with the uNID that is the next
