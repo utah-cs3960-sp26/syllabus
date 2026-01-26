@@ -51,12 +51,6 @@ Lecture B1, *Next-token Prediction*
   introduces the basic idea of language modeling from tokens, and
   pages 6-7 introduce Markov chain models (as in our activity; Shannon
   spells it Markoff) for English. Most of the rest is math.
-+ Optional reading: [Prediction and Entropy of Printed
-  English](https://www.princeton.edu/~wbialek/rome/refs/shannon_51.pdf) \
-  This 1950 manuscript by Claude Shannon described his experiments
-  measuring how well humans do at language modeling. Modern LLMs are
-  trained using strikingly similar methods (and do as well or better
-  than humans).
 + Optional reading: [Attention is All You
   Need](https://arxiv.org/pdf/1706.03762) \
   This 2017 paper (known by its title) introduced the "attention"
@@ -75,6 +69,39 @@ Lecture A2, *Testing*
 + Activity: 
 
 Lecture B2, *Fine-tuning*
+
++ Reading: Section 1.1 of [Scaling Laws for Neural Language
+  Models](https://arxiv.org/pdf/2001.08361) \
+  This 2020 paper from OpenAI shows that LLMs get consistently better
+  as you increase their network size *N*, data size *D*, and training
+  time *C*; this idea is sometimes called the "Scaling Hypothesis".
+  Four of the authors (Dario, Sam, Tom B., and Jared) would go on to
+  found Anthropic.
++ Optional reading: [Will scaling
+  work?](https://www.dwarkesh.com/p/will-scaling-work) \
+  This 2023 blog post asks whether LLMs can be scaled to human-level
+  results, answering "yes". It's a good summary of the state of the
+  discourse at the end of 2024, right before we started seeing clear
+  human-level performance from LLMs.
++ Optional reading: [Dolma: An Open Corpus of 3 Trillion Tokens
+for Language Model Pretraining
+Research](https://allenai.github.io/dolma/docs/assets/dolma-v0_1-20230819.pdf)
+\
+  This 2024 technical report describes Dolma dataset, including where
+  the data was gathered, how it was deduplicated and preprocessed, and
+  how it can be used for neural network training.
++ Optional reading: [Prediction and Entropy of Printed
+  English](https://www.princeton.edu/~wbialek/rome/refs/shannon_51.pdf) \
+  This 1950 manuscript by Claude Shannon described his experiments
+  measuring how well humans do at language modeling. Modern LLMs are
+  trained using strikingly similar methods (and do as well or better
+  than humans).
++ Optional reading: [The Scaling
+  Hypothesis](https://gwern.net/scaling-hypothesis#scaling) \
+  This 2020 blog post, written right after the release of GPT-3,
+  points out that scaling LLMs and training them on more data
+  consistently produces new capabilities, and argues that nothing
+  besides scale is actually needed to achieve human-level capability.
 
 Lecture A3
 
