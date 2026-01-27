@@ -73,10 +73,9 @@ Lecture B2, *Fine-tuning*
 + Reading: Section 1.1 of [Scaling Laws for Neural Language
   Models](https://arxiv.org/pdf/2001.08361) \
   This 2020 paper from OpenAI shows that LLMs get consistently better
-  as you increase their network size *N*, data size *D*, and training
-  time *C*; this idea is sometimes called the "Scaling Hypothesis".
-  Four of the authors (Dario, Sam, Tom B., and Jared) would go on to
-  found Anthropic.
+  as you scale them up; this idea is sometimes called the "Scaling
+  Hypothesis". Four of the authors (Dario, Sam, Tom B., and Jared)
+  would go on to found Anthropic.
 + Optional reading: [Will scaling
   work?](https://www.dwarkesh.com/p/will-scaling-work) \
   This 2023 blog post asks whether LLMs can be scaled to human-level
