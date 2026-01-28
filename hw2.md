@@ -34,7 +34,7 @@ fine to ask John and Pavel for ideas).
 
 You are free to ask questions, directed towards the author of the text
 editor that you're working with. But you don't need to. If someone
-asks you questoions about your editor, you must answer them clearly
+asks you questions about your editor, you must answer them clearly
 and promptly.
 
 Sometime before the due date for this assignment (Friday Jan 30 at
@@ -62,7 +62,7 @@ you find any bugs in it? Does it include enough tests? Etc.  We'll
 also discuss code reviews in class.
 
 Can you get help from AI for code review? Sure! In fact we encourage
-this. However, the code review belongs to you. If it is unreaonable or
+this. However, the code review belongs to you. If it is unreasonable or
 makes no sense, this is your fault. An AI is not a person and it
 cannot take responsibility for something.
 
