@@ -16,9 +16,9 @@ will need to run it now.
 
 This week, you will not be working on your own text editor, but rather
 on the editor belonging to the student with the uNID that is the next
-higher one in lexical order, among the students enrolled in the
+one in lexical order, among the students enrolled in the
 class. We'll post a list of uNIDs to Piazza to make this easy to find.
-If you're the last or first student in this list, do the obvious
+If you're the last student in this list, do the obvious
 wraparound.
 
 The first thing you should do is to familiarize yourself with the text
