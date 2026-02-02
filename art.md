@@ -70,9 +70,17 @@ Lecture A2, *Testing*
 - Music: ["Trial / Prison." *Einstein on the Beach*](https://www.youtube.com/watch?v=hZMjOyue1Sk)
 - [A stern Victorian gentleman with a magnifying glass examining a long table of nearly identical teacups, each with a tiny variation (chip, crack, odd handle). Assistants queue behind him holding cliboards.](art/teacups.jpeg)
 
+Demo 1
+
+- Music: "Osamu's Theme: Kyoko's House." *Mishima*
+
 Lecture B2, *Fine-tuning*
 
 - Music: ["Pruit Igoe." *Koyaanisqatsi*](https://www.youtube.com/watch?v=LF-YT5UhB9g)
+
+Lecture A3, *Testing*
+
+- Music: "Night Train." *Einstein on the Beach*
 
 Lecture B3, *Agents*
 

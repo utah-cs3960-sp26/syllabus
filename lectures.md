@@ -104,6 +104,8 @@ Research](https://allenai.github.io/dolma/docs/assets/dolma-v0_1-20230819.pdf)
 
 Lecture A3
 
++ Activity 
+
 Lecture B3, *Tool use*
 
 Lecture A4
