@@ -109,6 +109,7 @@ Lecture A3
 Lecture B3, *Tool use*
 
 + Activity: [Calculator, Week 5](https://github.com/utah-cs3960-sp26/calculator?tab=readme-ov-file#week-5)
++ Reading: [How to Build an Agent](https://ampcode.com/how-to-build-an-agent)
 
 Lecture A4
 
