@@ -104,9 +104,11 @@ Research](https://allenai.github.io/dolma/docs/assets/dolma-v0_1-20230819.pdf)
 
 Lecture A3
 
-+ Activity 
++ Activity: [Calculator, Week 4](https://github.com/utah-cs3960-sp26/calculator?tab=readme-ov-file#week-4)
 
 Lecture B3, *Tool use*
+
++ Activity: [Calculator, Week 5](https://github.com/utah-cs3960-sp26/calculator?tab=readme-ov-file#week-5)
 
 Lecture A4
 
