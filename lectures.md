@@ -7,9 +7,9 @@ Lectures for CS 3960 Vibe Coding
 | Jan 12 | B1     | A2        | release notes 2 |
 | Jan 19 | ------ | *Demo*    | HW1             |
 | Jan 26 | B2     | A3        |                 |
-| Feb  2 | B3     | A4        |                 |
-| Feb  9 | *Demo* | C1        | HW2             |
-| Feb 16 | ------ | D1        |                 |
+| Feb  2 | B3     | A4        | HW2             |
+| Feb  9 | C1     | D1        |                 |
+| Feb 16 | ------ | *Demo*    |                 |
 | Feb 23 | C2     | D2        |                 |
 | Mar  2 | *Demo* | D3        | HW3             |
 | Mar  9 | C3     | D4        |                 |
@@ -114,6 +114,8 @@ Lecture B3, *Tool use*
 Lecture A4
 
 Lecture C1, *Context Engineering*
+
++ Reading: [Context Engineering for Agents](https://rlancemartin.github.io/2025/06/23/context_engineering/)
 
 Lecture D1
 
