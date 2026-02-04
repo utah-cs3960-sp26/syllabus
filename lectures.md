@@ -111,7 +111,11 @@ Lecture B3, *Tool use*
 + Activity: [Calculator, Week 5](https://github.com/utah-cs3960-sp26/calculator?tab=readme-ov-file#week-5)
 + Reading: [How to Build an Agent](https://ampcode.com/how-to-build-an-agent)
 
-Lecture A4
+Lecture A4, *Test Coverage*
+
++ Activity: Code coverage activity
++ Reading: [How to Balance Speed, Quality, and Maintainability in Test Suite Management](https://katalon.com/resources-center/blog/test-suite-management)
++ Optional Reading: [How to Misuse Code Coverage](http://www.exampler.com/testing-com/writings/coverage.pdf)
 
 Lecture C1, *Context Engineering*
 
