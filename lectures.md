@@ -29,6 +29,24 @@ Lecture 00, *Introduction*
 Lecture A1, *Software Engineering*
 + Reading: none
 + Activity: discussion
++ Optional reading: [The Mythical Man-Month](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959) \
+  This classic essay collection, originally written in 1975, discusses
+  the lessons learned about large-scale software engineering working
+  on System/360, an old IBM mainframe computer program. At the time
+  this was one of the largest software developments ever done, and a
+  lot of the lessons are still valid.
++ Optional reading: [Code Complete *2e*](https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670) \
+  This classic book, written in 1994 and now a little dated, is all
+  about what it takes to write large software programs, besides of
+  course being able to program.
++ Optional reading: [Software Engineering at Google](https://abseil.io/resources/swe-book) \
+  This more recent book, published in 2020, covers somewhat more
+  modern lessons learned from building large systems at Google. Google
+  was early to building "Internet-scale" software and so was building
+  some of the most complex software of its time. Happily, the lessons
+  really are quite similar to those in the prior two books, showing
+  that for over 50 years we've been learning the same kinds of things
+  about software engineering.
 
 Lecture B1, *Next-token Prediction*
 
