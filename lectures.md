@@ -115,7 +115,11 @@ Lecture A4, *Test Coverage*
 
 + Activity: Code coverage activity
 + Reading: [How to Balance Speed, Quality, and Maintainability in Test Suite Management](https://katalon.com/resources-center/blog/test-suite-management)
-+ Optional Reading: [How to Misuse Code Coverage](http://www.exampler.com/testing-com/writings/coverage.pdf)
++ Optional Reading: [How to Misuse Code
+  Coverage](http://www.exampler.com/testing-com/writings/coverage.pdf) \
+  This article, written in 1997, makes the point that, if you just
+  blindly cover uncovered code, you’re doing it wrong, and explains
+  why with a lot of examples.
 
 Lecture C1, *Context Engineering*
 
