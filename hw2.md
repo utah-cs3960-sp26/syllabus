@@ -71,19 +71,27 @@ In Canvas, hand in links to your two code reviews by the due date.
 ## Week 6
 
 This week your code base should include the feature that you merged
-from another student in the class. The first thing you should do is
-run your editor's test suite, with the Python code coverage tool
-enabled:
+from another student in the class. Your assignment is to get close to
+100% code coverage on your editor (including the new feature).
 
-https://github.com/coveragepy/coveragepy
+You have three main tools at your disposal here. You may add new test
+cases to cover uncovered lines of code. Second, you may remove lines
+of code that you're certain are dead. Third, if there are chunks of
+code that you can't cover but you don't think are dead, you must
+explain each of them to us using a couple of sentences of English
+text. If there are more than 10 of these, then you don't need to
+write about all of them, just the first 10.
 
-But you should be able to easily get coverage like this:
-
-```
-pytest --cov=pyedit
-```
-
-Report the total coverage achieved by your unit tests. 
+By the due day (5pm on Friday Feb 13), produce a document in the
+root directory of your repo, called COVERAGE.md, which mentions:
+- what command we should run to measure the coverage of your tests
+- what total percent coverage you have achieved
+- a list of exceptions that you could not cover. each of them should
+  link to a block (a range of lines) of code in your repo, and then
+  include the description mentioned above, explaining why this
+  code is not covered. Again, you don't need to do more than 10
+  of these, and you can do zero of them if you have achieved
+  100% coverage of your editor.
 
 # Submission
 
