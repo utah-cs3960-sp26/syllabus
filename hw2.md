@@ -101,4 +101,18 @@ See instructions in the individual weeks.
 
 # Demo Day
 
-TBA
+Show up ready to show your tests. The instructors will walk between
+tables and ask you two questions:
+
+- How do you test `<feature>`. How did you test some specific edge
+  case? Be prepared to show the actual tests, for at least two
+  features from the list in [HW1](hw1.md). Recall that your editor
+  should implement at least three of these features by now.
+- What couldn't you cover? Why not? What manual testing did you do to
+  gain confidence that that code is correct? If you truly have 100%
+  code coverage, than instead of prepared to discuss how you test
+  things like starting & quitting the application window, saving files
+  and dealing with file system issues, and similar hard-to-test cases.
+
+Expect to spend a few minutes on each one, including answering
+follow-up questions and showing your testing code.
