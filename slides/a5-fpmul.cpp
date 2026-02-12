@@ -1,6 +1,8 @@
 #include <stdint.h>
 #include <string.h>
 
+#include "fpmul.h"
+
 float fpmul(float a, float b) {
   uint32_t ai, bi;
   memcpy(&ai, &a, 4);
