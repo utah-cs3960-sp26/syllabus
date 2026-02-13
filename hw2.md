@@ -79,10 +79,10 @@ cases to cover uncovered lines of code. Second, you may remove lines
 of code that you're certain are dead. Third, if there are chunks of
 code that you can't cover but you don't think are dead, you must
 explain each of them to us using a couple of sentences of English
-text. If there are more than 10 of these, then you don't need to
-write about all of them, just the first 10. **You are to write these
-yourself, don't use the AI.** We want to know that you understand
-why this code can't be covered.
+text. If there are more than 10 of these, then you don't need to write
+about all of them, just the first 10. **You are to write this text
+yourself, don't use the AI.** We want to know that you understand why
+this code can't be covered.
 
 By the due day (5pm on Friday Feb 13), produce a document in the
 root directory of your repo, called COVERAGE.md, which mentions:
