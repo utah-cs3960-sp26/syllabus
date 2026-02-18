@@ -1,7 +1,7 @@
 CS 3960 Homework 2
 ------------------
 
-Status: draft \
+Status: final \
 Due: 13 Feb
 
 In this assignment you will continue to work on text editors.
