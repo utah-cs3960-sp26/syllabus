@@ -145,7 +145,15 @@ Lecture C1, *Context Engineering*
 
 Lecture D1
 
-Lecture C2, *Context Capacity*
+Lecture C2, *Parallelizing Work*
+
+- Reading: [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/)
+- Optional reading: [Manifesto for Agile Software Development](https://agilemanifesto.org/) \
+  This very influential manifesto, and the associated
+  [Principles](https://agilemanifesto.org/principles.html) written in
+  2001, was influential in the reorganization of software around
+  individual developers owning all steps from writing to debugging to
+  testing and reviewing code.
 
 Lecture D2
 
