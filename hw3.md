@@ -2,7 +2,7 @@ CS 3960 Homework 3
 ------------------
 
 Status: draft \
-Due: 13 Mar
+Due: 6 Mar
 
 In this assignment you will make your text editor fast.
 
@@ -79,30 +79,20 @@ architecture.
 
 ## Week 9
 
-Do the same as above, but now bring your frame timings below 1 second,
-except for find-replace on `large.txt`, which should be under a minute
-but can be longer than 1 second. You may need to use the `mmap`
-library. Be wary of multi-threading, which makes tricky mistakes easy
-to make. If you must use multi-threading, like for indexing, use it in
-limited ways with a simple lock discipline.
+Do the same as above, but now bring your frame timings below 16 ms,
+except for find-replace on `large.txt`, which should be under 1
+second. You may need to use the `mmap` library. Be wary of
+multi-threading, which makes tricky mistakes easy to make. If you must
+use multi-threading, like for indexing, use it in limited ways with a
+simple lock discipline. You may need to learn more about the Qt event
+loop and perform expensive operations like find-replace in multiple
+smaller chunks. Make sure you are still getting the correct number of
+matches.
 
 By the due date (5pm on Friday Mar 6), add your Week 9 timings to
 `TIMING.md`, keeping existing timings and labeling everything clearly.
 Write a paragraph (clearly labeling it Week 9) describing what changes
 you had to make and your current editor architecture.
-
-## Week 10
-
-Do the same as above, but now bring your frame timings below 16ms,
-including for find-replace on `large.txt`. You may need to learn more
-about the Qt event loop and perform expensive operations like
-find-replace in multiple smaller chunks. Make sure you are still
-getting the correct number of matches.
-
-By the due date (5pm on Friday Mar 13), add your Week 10 timings to
-`TIMING.md`, keeping existing timings and labeling everything clearly.
-Write a paragraph (clearly labeling it Week 10) describing what
-changes you had to make and your current editor architecture.
 
 # Submission
 

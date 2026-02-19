@@ -11,11 +11,11 @@ Lectures for CS 3960 Vibe Coding
 | Feb  9 | C1     | D1        |                 |
 | Feb 16 | ------ | *Demo*    |                 |
 | Feb 23 | C2     | D2        |                 |
-| Mar  2 | *Demo* | D3        | HW3             |
-| Mar  9 | C3     | D4        |                 |
-| Mar 16 | ------ | ------    | ------          |
-| Mar 23 | C4     | D5        |                 |
-| Mar 30 | C5     | *Demo*    | HW4             |
+| Mar  2 | C3     | *Demo*    | HW3             |
+| Mar  9 | ------ | ------    | ------          |
+| Mar 16 | C4     | D3        |                 |
+| Mar 23 | C5     | D4        |                 |
+| Mar 30 | D5     | *Demo*    | HW4             |
 | Apr  6 | E1     | E2        |                 |
 | Apr 13 | E3     | E4        | HW5             |
 | Apr 20 | *Demo* | ------    | ------          |
