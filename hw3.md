@@ -10,21 +10,24 @@ In this assignment you will make your text editor fast.
 
 First make sure your text editor has a find-and-replace feature. Most
 students implemented one at some point, but if not, the actual UI can
-be simple; we only need single-file find-replace for strings. Make
-sure it's accessible with Ctrl-F and make it sure it shows the number
-of matches / replacements.
+be simple; you only need single-file string find-replace. To be
+specific, you only need "replace all". Make sure it's accessible with
+Ctrl-F and make it sure it shows the number of matches / replacements.
 
 ## Week 8
 
-Add a frame timer to your text editor; there's a built-in Qt widget.
+Add a frame timer to your text editor; it should show the last,
+average, and max frame timings, and it should subtract idle time.
 Make Ctrl-P show/hide it. Make sure it does not time while it is
 hidden, and that the frame timings reset when you hide the widget.
 We'll need that to time different editor actions.
 
 Frame timers measure how long it takes the editor to respond to a user
-action. Most GUI applications target frame timings of 16ms or 60Hz;
-newer displays even target 8ms or 120Hz. In this class we'll target a
-16ms or 60Hz.
+action. Verify that yours works: open your editor with an empty file
+and open the frame timer. It should show timings far below 16ms,
+probably a few milliseconds. Most GUI applications target frame
+timings of 16ms or 60Hz; newer displays even target 8ms or 120Hz. In
+this class we'll target a 16ms or 60Hz.
 
 We will be testing your editor's performance on three files:
 
@@ -43,24 +46,25 @@ don't check them into your Git repository, they are too large.
 
 Open each of the three files. For each file, record:
 
-- The time it takes to open the file, specifically the time between
-  pressing the "Select" or similar button on the file picker and the
-  time that the editor is usable again.
-- The maximum and average frame times as you scroll up and down. Try
+- The maximum frame time when you open the file.
+- The maximum frame time as you scroll up and down. Try
   to scroll a few hundred lines quickly using your touchpad or mouse.
 - The maximum and average frame times when you click far away from the
   current location in the scroll bar.
-- The maximum and average frame times if you try to replace "while"
-  with "for". There should be 19 matches in `small.txt`, 1 186 in
-  `medium.txt`, and 2 720 995 in `large.txt`
+- The maximum frame time if you try to replace "while" with "for".
+  There should be 19 matches in `small.txt`, 1 186 in `medium.txt`,
+  and 2 720 995 in `large.txt`
 - The total memory used by your text editor process, which you can
   measure using "Task Manager" or "Activity Monitor" or your system's
   equivalent. Specifically look for a "Physical" or "Real" memory
   measure, not "Virtual". For the largest file it should be 1-3GiB.
 
+Make sure to confirm that the number of matches when finding and
+replacing is correct.
+
 If your text editor can't load `large.txt` after a few minutes, you
-don't have to time scrolling and find-replacing for it. Make sure to
-confirm that the number of matches is correct.
+don't have to time scrolling and find-replacing for it. If you think
+you got an outlier measurement you can try again and take the lowest.
 
 Record your results in a file called `TIMING.md` in the root of your
 repository, and clearly label them as your initial timings.
@@ -79,15 +83,18 @@ architecture.
 
 ## Week 9
 
-Do the same as above, but now bring your frame timings below 16 ms,
-except for find-replace on `large.txt`, which should be under 1
-second. You may need to use the `mmap` library. Be wary of
-multi-threading, which makes tricky mistakes easy to make. If you must
-use multi-threading, like for indexing, use it in limited ways with a
-simple lock discipline. You may need to learn more about the Qt event
-loop and perform expensive operations like find-replace in multiple
-smaller chunks. Make sure you are still getting the correct number of
-matches.
+Do the same as above, but now we want to hit good frame times, not a
+minute. Specifically, scroll and find-replace should be under 16ms.
+For opening a file, which probably depends on the system file picker,
+that might not be achievable, but you should get a maximum frame time
+of 1s and the times for the small, medium, and large files should all
+be within 100ms of each other.
+
+You may need to use the `mmap` library. Be wary of multi-threading,
+which makes tricky mistakes easy to make. If you must use
+multi-threading, like for indexing, use it in limited ways with a
+simple lock discipline. Make sure you are still getting the correct
+number of matches after any optimizations you perform.
 
 By the due date (5pm on Friday Mar 6), add your Week 9 timings to
 `TIMING.md`, keeping existing timings and labeling everything clearly.
