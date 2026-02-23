@@ -126,6 +126,13 @@ dropped frame across the experiments above (you can group them if you
 think it's best) and explain why those frames are dropped and why you
 can't fix it.
 
+Finally, in `TIMING.md`, answer a couple of additional questions about
+your architecture. Which operations are slower now? Do you expect
+multi-line find-and-replace to be more challenging to implement than
+with your original (pre-HW3) design? How about deleting a line of
+text, would you expect that to be slower than before? How about
+multiple split views all showing different parts of the same file?
+
 # Submission
 
 See instructions in the individual weeks.
