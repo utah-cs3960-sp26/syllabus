@@ -1,7 +1,7 @@
 CS 3960 Homework 3
 ------------------
 
-Status: draft \
+Status: final \
 Due: 6 Mar
 
 In this assignment you will make your text editor fast.
@@ -25,24 +25,39 @@ We'll need that to time different editor actions.
 Frame timers measure how long it takes the editor to respond to a user
 action. Verify that yours works: open your editor with an empty file
 and open the frame timer. It should show timings far below 16ms,
-probably a few milliseconds. Most GUI applications target frame
-timings of 16ms or 60Hz; newer displays even target 8ms or 120Hz. In
-this class we'll target a 16ms or 60Hz.
+probably a few milliseconds; if you see timings of about 500ms on an
+empty file, your frame timer probably isn't handling idle frames
+correctly. (In this case, your editor is probably redrawing every
+500ms in order to blink the cursor, but it *could* redraw much faster
+if it wanted to, like if the user was interacting with it.)
+
+Most GUI applications target frame timings of 16ms or 60Hz; newer
+displays even target 8ms or 120Hz. Our goal in this assignment will be
+to get as close as possible to this target for all user actions in our
+editor, but we'll specifically test file opening, scrolling, and
+find-replace. How hard this is will depend on what other features
+you've implemented in your editor. If you've implemented, say, rich
+text editing, then you might need to add fast-paths when that is not
+in use.
 
 We will be testing your editor's performance on three files:
 
- - `small.txt` is a few hundred lines long
- - `medium.txt` is ten thousand lines long
- - `large.txt` is over a million lines long, and some of those
-   lines are thousands of characters long.
+ - [`small.txt`][small] is a few hundred lines long
+ - [`medium.txt`][medium] is ten thousand lines long
+ - [`large.txt`][large] is over a million lines long, and some of
+   those lines are thousands of characters long.
+ 
+[small]: https://pavpanchekha.com/cs3960/small.txt
+[medium]: https://pavpanchekha.com/cs3960/medium.txt
+[large]: https://pavpanchekha.com/cs3960/large.txt
+
+Don't check these files into your Git repository, they are too large.
+Github will reject them.
 
 All of the files use a lot of Python keywords, though they're not
 really Python code per se. Files like `large.txt` are rare, but they
 do happen: log files, disk dumps, packed files, hex dumps, and similar
 all occur every now and then.
-
-You can download these files from [this repository](../data/) but
-don't check them into your Git repository, they are too large.
 
 Open each of the three files. For each file, record:
 
@@ -53,7 +68,7 @@ Open each of the three files. For each file, record:
   current location in the scroll bar.
 - The maximum frame time if you try to replace "while" with "for".
   There should be 19 matches in `small.txt`, 1 186 in `medium.txt`,
-  and 2 720 995 in `large.txt`
+  and 668 753 in `large.txt`
 - The total memory used by your text editor process, which you can
   measure using "Task Manager" or "Activity Monitor" or your system's
   equivalent. Specifically look for a "Physical" or "Real" memory
@@ -71,9 +86,8 @@ repository, and clearly label them as your initial timings.
 
 Once done, make it possible to open, scroll, and find-replace
 `large.txt` in under a minute. This could require a substantial amount
-of work; feel free to discuss with your AI. Consider subclassing Qt's
-`QAbstractScrollArea`. If you see memory usage grow past 3GiB for the
-largest file, that's one place to start.
+of work; feel free to discuss with your AI. If memory usage grows past
+3GiB for the largest file, that's one place to start.
 
 By the due date (5pm on Friday Feb 27), re-record the timings in
 `TIMING.md`. Keep the initial timings in the document as well. Clearly
@@ -84,22 +98,33 @@ architecture.
 ## Week 9
 
 Do the same as above, but now we want to hit good frame times, not a
-minute. Specifically, scroll and find-replace should be under 16ms.
-For opening a file, which probably depends on the system file picker,
-that might not be achievable, but you should get a maximum frame time
-of 1s and the times for the small, medium, and large files should all
-be within 100ms of each other.
+minute. The ideal times are 16ms for each action on each file. Any
+frame that takes more than 16ms is a "dropped" frame and we want as
+few of those as possible.
 
-You may need to use the `mmap` library. Be wary of multi-threading,
-which makes tricky mistakes easy to make. If you must use
-multi-threading, like for indexing, use it in limited ways with a
-simple lock discipline. Make sure you are still getting the correct
-number of matches after any optimizations you perform.
+In some cases, that might not be possible---opening a file, for
+example, probably uses your system file picker. You need to account
+for every dropped frame: what's the code that drops the frame, why
+does it take so long, and why can't you fix it. Make sure your answers
+are consistent across file sizes. For example, if you think the system
+file picker drops two frames, you'd expect that to happen the same way
+with all three sizes.
+
+You may need to use additional libraries and further change your
+architecture to minimize dropped frames, but list every library used
+and describe why you use it. Be wary of multi-threading, which makes
+tricky mistakes easy to make. If you must use multi-threading, like
+for indexing, use it in limited ways with a simple lock discipline.
+Make sure you are still getting the correct number of matches after
+any optimizations you perform.
 
 By the due date (5pm on Friday Mar 6), add your Week 9 timings to
 `TIMING.md`, keeping existing timings and labeling everything clearly.
 Write a paragraph (clearly labeling it Week 9) describing what changes
-you had to make and your current editor architecture.
+you had to make and your current editor architecture. Then list every
+dropped frame across the experiments above (you can group them if you
+think it's best) and explain why those frames are dropped and why you
+can't fix it.
 
 # Submission
 
