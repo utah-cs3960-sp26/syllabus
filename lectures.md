@@ -147,13 +147,10 @@ Lecture D1
 
 Lecture C2, *Parallelizing Work*
 
-- Reading: [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/)
-- Optional reading: [Manifesto for Agile Software Development](https://agilemanifesto.org/) \
-  This very influential manifesto, and the associated
-  [Principles](https://agilemanifesto.org/principles.html) written in
-  2001, was influential in the reorganization of software around
-  individual developers owning all steps from writing to debugging to
-  testing and reviewing code.
+- Reading: [A Successful git Branching Model](https://nvie.com/posts/a-successful-git-branching-model/)
+- Optional reading: Microsoft put up a [bizarre AI
+  hallucination](https://nvie.com/posts/15-years-later/) of this
+  diagram on their website for some reason.
 
 Lecture D2
 
