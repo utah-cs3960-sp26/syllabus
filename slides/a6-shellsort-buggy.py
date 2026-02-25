@@ -22,13 +22,3 @@ def shell_sort(values: Sequence[T]) -> list[T]:
         gap //= 2
 
     return arr
-
-
-def main() -> None:
-    sample = [9, 3, 7, 1, 5]
-    print("Original:", sample)
-    print("Sorted:", shell_sort(sample))
-
-
-if __name__ == "__main__":
-    main()
