@@ -11,9 +11,9 @@ Lectures for CS 3960 Vibe Coding
 | Feb  9 | C1     | D1        |                 |
 | Feb 16 | ------ | *Demo*    |                 |
 | Feb 23 | C2     | D2        |                 |
-| Mar  2 | C3     | *Demo*    | HW3             |
+| Mar  2 | C3     | D3        | HW3             |
 | Mar  9 | ------ | ------    | ------          |
-| Mar 16 | C4     | D3        |                 |
+| Mar 16 | *Demo* | C4        |                 |
 | Mar 23 | C5     | D4        |                 |
 | Mar 30 | D5     | *Demo*    | HW4             |
 | Apr  6 | E1     | E2        |                 |
@@ -143,7 +143,7 @@ Lecture C1, *Context Engineering*
 
 + Reading: [Context Engineering for Agents](https://rlancemartin.github.io/2025/06/23/context_engineering/)
 
-Lecture D1
+Lecture D1, *Fuzzing*
 
 Lecture C2, *Parallelizing Work*
 
@@ -152,13 +152,34 @@ Lecture C2, *Parallelizing Work*
   hallucination](https://nvie.com/posts/15-years-later/) of this
   diagram on their website for some reason.
 
-Lecture D2
+Lecture D2, *Assertions*
+
+- Reading: [QuickCheck: a lightweight tool for random testing of Haskell programs](https://dl.acm.org/doi/pdf/10.1145/351240.351266)
+- Optional reading: [How to Fuzz an ADT
+  Implementation](https://blog.regehr.org/archives/896), by John
+- Optional reading: [Write Fuzzable Code](https://blog.regehr.org/archives/1687), by John
+- Optional reading: [Use of Assertions](https://blog.regehr.org/archives/1091), by John
+- Optional reading: [The Fuzzing Book](https://www.fuzzingbook.org/) \
+  This book covers both how fuzzing works and how to use it
+  effectively to test a wide variety of programs.
 
 Lecture C3, *Prompts*
 
 Lecture D3
 
 Lecture C4, *Tool outputs*
+ 
+- Reading: [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/)
+
+ Consider how car manufacturing is different from AI coding. It's very very different! What justifications does Toyota give for just-in-time manufacturing. Which justifications do apply to WIP in software engineering and which ones don't? What about the sections on "automation with a human touch" / jidoka—is there any relevance of this concept to software engineering?
+
+- Optional reading: [Manifesto for Agile Software Development](https://agilemanifesto.org/) \
+  This very influential manifesto, and the associated
+  [Principles](https://agilemanifesto.org/principles.html) written in
+  2001, was influential in the reorganization of software around
+  individual developers owning all steps from writing to debugging to
+  testing and reviewing code.
+
 
 Lecture D4
 
