@@ -163,7 +163,11 @@ Lecture D2, *Assertions*
   This book covers both how fuzzing works and how to use it
   effectively to test a wide variety of programs.
 
-Lecture C3, *Prompts*
+Lecture C3, *Documentation*
+
+- Reading: [Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/)
+- Optional reading: [Explaining Code using ASCII
+  Art](https://blog.regehr.org/archives/1653), by John
 
 Lecture D3
 
