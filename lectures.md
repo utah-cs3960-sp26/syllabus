@@ -166,8 +166,7 @@ Lecture D2, *Assertions*
 Lecture C3, *Documentation*
 
 - Reading: [Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/)
-- Optional reading: [Explaining Code using ASCII
-  Art](https://blog.regehr.org/archives/1653), by John
+- Optional reading: [Explaining Code using ASCII Art](https://blog.regehr.org/archives/1653), by John
 
 Lecture D3
 
