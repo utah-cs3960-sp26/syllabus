@@ -139,4 +139,10 @@ See instructions in the individual weeks.
 
 # Demo Day
 
-TBD
+Please come to class ready to run your text editor and:
+
+- Demo opening and find-replacing for `large.txt`, with the frame rate monitor up.
+- Discuss the main optimizations you did and the architecture you ended up with (what are the main data structures you maintain, when are they updated, when are they created / deleted, what interfaces did you build around them)
+- Prepare to show some of the code for these data structures or subsystems
+
+Expect to spend a few minutes on each one, including answering follow-up questions and showing your data structure code.
