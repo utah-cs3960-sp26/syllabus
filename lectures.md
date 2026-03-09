@@ -8,16 +8,16 @@ Lectures for CS 3960 Vibe Coding
 | Jan 19 | ------ | *Demo*    | HW1             |
 | Jan 26 | B2     | A3        |                 |
 | Feb  2 | B3     | A4        | HW2             |
-| Feb  9 | C1     | D1        |                 |
+| Feb  9 | C1     | A5        |                 |
 | Feb 16 | ------ | *Demo*    |                 |
-| Feb 23 | C2     | D2        |                 |
-| Mar  2 | C3     | D3        | HW3             |
+| Feb 23 | C2     | A6        |                 |
+| Mar  2 | C3     | A7        | HW3             |
 | Mar  9 | ------ | ------    | ------          |
-| Mar 16 | *Demo* | C4        |                 |
-| Mar 23 | C5     | D4        |                 |
-| Mar 30 | D5     | *Demo*    | HW4             |
-| Apr  6 | E1     | E2        |                 |
-| Apr 13 | E3     | E4        | HW5             |
+| Mar 16 | D1     | *Demo*    |                 |
+| Mar 23 | D2     | D3        | HW4             |
+| Mar 30 | *Demo* | D4        |                 |
+| Apr  6 | D5     | D6        |                 |
+| Apr 13 | D7     | D8        | HW5             |
 | Apr 20 | *Demo* | ------    | ------          |
 
 Lecture 00, *Introduction*
@@ -143,7 +143,7 @@ Lecture C1, *Context Engineering*
 
 + Reading: [Context Engineering for Agents](https://rlancemartin.github.io/2025/06/23/context_engineering/)
 
-Lecture D1, *Fuzzing*
+Lecture A5, *Fuzzing*
 
 Lecture C2, *Parallelizing Work*
 
@@ -152,7 +152,7 @@ Lecture C2, *Parallelizing Work*
   hallucination](https://nvie.com/posts/15-years-later/) of this
   diagram on their website for some reason.
 
-Lecture D2, *Assertions*
+Lecture A6, *Assertions*
 
 - Reading: [QuickCheck: a lightweight tool for random testing of Haskell programs](https://dl.acm.org/doi/pdf/10.1145/351240.351266)
 - Optional reading: [How to Fuzz an ADT
@@ -168,10 +168,12 @@ Lecture C3, *Documentation*
 - Reading: [Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/)
 - Optional reading: [Explaining Code using ASCII Art](https://blog.regehr.org/archives/1653), by John
 
-Lecture D3
+Lecture A7, *Program Verification*
 
-Lecture C4, *Tool outputs*
- 
+Lecture D1, *Claude C Compiler*
+
+Lecture Cn, *Tool outputs*
+
 - Reading: [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/)
 
  Consider how car manufacturing is different from AI coding. It's very very different! What justifications does Toyota give for just-in-time manufacturing. Which justifications do apply to WIP in software engineering and which ones don't? What about the sections on "automation with a human touch" / jidoka—is there any relevance of this concept to software engineering?
@@ -182,18 +184,3 @@ Lecture C4, *Tool outputs*
   2001, was influential in the reorganization of software around
   individual developers owning all steps from writing to debugging to
   testing and reviewing code.
-
-
-Lecture D4
-
-Lecture C5, *Sub-agents*
-
-Lecture D5
-
-Lecture E1
-
-Lecture E2
-
-Lecture E3
-
-Lecture E4
