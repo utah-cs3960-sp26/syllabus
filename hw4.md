@@ -1,7 +1,7 @@
 CS 3960 Homework 4
 ------------------
 
-Status: draft \
+Status: released \
 Due: 27 Mar
 
 In this assignment you will build a new project: a physics simulator.
