@@ -7,8 +7,8 @@ Lectures for CS 3960 Vibe Coding
 | Jan 12 | B1     | A2        | release notes 2 |
 | Jan 19 | ------ | *Demo*    | HW1             |
 | Jan 26 | B2     | A3        |                 |
-| Feb  2 | B3     | A4        | HW2             |
-| Feb  9 | C1     | A5        |                 |
+| Feb  2 | B3     | A4        |                 |
+| Feb  9 | C1     | A5        | HW2             |
 | Feb 16 | ------ | *Demo*    |                 |
 | Feb 23 | C2     | A6        |                 |
 | Mar  2 | C3     | A7        | HW3             |
