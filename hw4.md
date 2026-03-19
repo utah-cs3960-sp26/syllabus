@@ -69,7 +69,7 @@ back through your edits later.
 Push your work [to Github](https://github.com/utah-cs3960-sp26) and
 name your repository `simulate-uXXXXXXX`.
 
-## Week 8
+## Week 10
 
 Create a `RESULTS.md` file in your repository. Run your simulator and
 summarize the current status of your physics simulator. Ideally you'll
@@ -81,7 +81,7 @@ Detail the changes you made and why you made them. What Amp
 misbehaviors did you notice? What and why did you add to the prompt
 file? Did you remove anything?
 
-## Week 9
+## Week 11
 
 Make it possible to describe the initial scene in a CSV file; the CSV
 file should have one row per ball and list a starting position and a
