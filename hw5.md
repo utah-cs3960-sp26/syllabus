@@ -2,7 +2,7 @@ CS 3960 Homework 5
 -----------------
 
 Status: draft \
-Due: Monday 20 April
+Due: Friday 17 April
 
 In this assignment you will build a self-directed project. Come up
 with something cool to show off to the rest of the class! Please do
@@ -38,7 +38,7 @@ By 5pm on Friday April 10, you should have pushed a section called
 
 ## Week 13 April 13-17
 
-By 5pm in Friday April 18, you should have pushed a section called
+By 5pm in Friday April 17, you should have pushed a section called
 "Week 13 Release Notes" to your repo. It should:
 - Describe how your final product compares and contrasts with your
   proposal from a couple of weeks earlier.
