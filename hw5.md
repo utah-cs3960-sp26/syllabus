@@ -1,7 +1,7 @@
 CS 3960 Homework 5
 -----------------
 
-Status: draft \
+Status: final \
 Due: Friday 17 April
 
 In this assignment you will build a self-directed project. Come up
