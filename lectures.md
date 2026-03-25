@@ -177,9 +177,20 @@ Lecture D1, *Claude C Compiler*
 
 Lecture D2, *JustHTML and chardet*
 
-- Reading: [Issue #327: No right to relicense this project](https://github.com/chardet/chardet/issues/327),
-  specifically the initial issue by `a2mark` and the pinned reply by `dan-blanchard`
-- Reading: [Can coding agents relicense open source through a “clean room” implementation of code?](https://simonwillison.net/2026/Mar/5/chardet/)
+- Reading: [How I wrote JustHTML using coding agents](https://friendlybit.com/python/writing-justhtml-with-coding-agents/)
+- Optional Reading: [JustHTML is a fascinating example of vibe
+  engineering in
+  action](https://simonwillison.net/2025/Dec/14/justhtml/), by Simon
+  Willison, a discussion of what he found most interesting about
+  JustHTML.
+- Optional Reading: [JustHTML – Agent instructions](https://github.com/EmilStenstrom/justhtml/blob/main/.github/copilot-instructions.md#golden-rules) \
+  This seems to be the `AGENTS.md` equivalent used for JustHTML.
+- Reading: [I ported JustHTML from Python to JavaScript with Codex CLI and GPT-5.2 in 4.5 hours](https://simonwillison.net/2025/Dec/15/porting-justhtml/)
+- Optional Reading: [Issue #327: No right to relicense this project](https://github.com/chardet/chardet/issues/327),
+  specifically the initial issue by `a2mark` and the pinned reply by `dan-blanchard`.
+  This is the discussion between Mark and Dan about relicensing `chardet`.
+- Optional Reading: [Can coding agents relicense open source through a “clean room” implementation of code?](https://simonwillison.net/2026/Mar/5/chardet/)
+  This is Simon Willison's discussion of the `chardet` saga
 
 Lecture Cn, *Tool outputs*
 
