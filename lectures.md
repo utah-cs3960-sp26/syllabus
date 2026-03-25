@@ -172,6 +172,15 @@ Lecture A7, *Program Verification*
 
 Lecture D1, *Claude C Compiler*
 
+- Reading: [Building a C compiler with a team of parallel Claudes](https://www.anthropic.com/engineering/building-c-compiler)
+- Optional reading: [I Fuzzed, and Vibe Fixed, the Vibed C Compiler](https://john.regehr.org/writing/claude_c_compiler.html), by John
+
+Lecture D2, *JustHTML and chardet*
+
+- Reading: [Issue #327: No right to relicense this project](https://github.com/chardet/chardet/issues/327),
+  specifically the initial issue by `a2mark` and the pinned reply by `dan-blanchard`
+- Reading: [Can coding agents relicense open source through a “clean room” implementation of code?](https://simonwillison.net/2026/Mar/5/chardet/)
+
 Lecture Cn, *Tool outputs*
 
 - Reading: [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/)
