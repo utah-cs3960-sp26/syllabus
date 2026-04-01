@@ -43,7 +43,7 @@ language paragraphs:
   
 ## Week 13 April 6-10
 
-By 5pm on Friday April 10, push a section called "Week 12" to your
+By 5pm on Friday April 10, push a section called "Week 13" to your
 `README.md`. It should discuss:
 
 - What's working so far on your project? What are your concrete plans
@@ -54,7 +54,7 @@ By 5pm on Friday April 10, push a section called "Week 12" to your
 
 ## Week 14 April 13-17
 
-By 5pm in Friday April 17, push a section called "Week 13" to your
+By 5pm in Friday April 17, push a section called "Week 14" to your
 `README.md`. It should:
 
 - Describe how your final product meets or deviates from your proposal
