@@ -29,7 +29,7 @@ Push your work [to Github](https://github.com/utah-cs3960-sp26) and
 name your repository `final-project-uXXXXXXX`. You'll put all of your
 hand-in stuff in `README.md`. Please hand-write that file.
 
-## Week 11 March 30-April 3
+## Week 12 March 30-April 3
 
 By 5pm on Friday April 3, push a section called "Proposal" to the
 `README.md` in your repository. It should consist of two English
@@ -41,9 +41,9 @@ language paragraphs:
    What will be the feedback mechanisms that you will tell the agent
    to use, to ensure a quality product?
   
-## Week 12 April 6-10
+## Week 13 April 6-10
 
-By 5pm on Friday April 10, push a section called "Week 12" to your
+By 5pm on Friday April 10, push a section called "Week 13" to your
 `README.md`. It should discuss:
 
 - What's working so far on your project? What are your concrete plans
@@ -52,9 +52,9 @@ By 5pm on Friday April 10, push a section called "Week 12" to your
   week? If you're using Amp, link to the relevant threads. What did
   you change to stop the agent from doing that dumb thing again?
 
-## Week 13 April 13-17
+## Week 14 April 13-17
 
-By 5pm in Friday April 17, push a section called "Week 13" to your
+By 5pm in Friday April 17, push a section called "Week 14" to your
 `README.md`. It should:
 
 - Describe how your final product meets or deviates from your proposal
