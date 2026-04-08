@@ -64,9 +64,10 @@ By 5pm in Friday April 17, push a section called "Week 14" to your
   project. This should be a public, unlisted video, meaning that
   anyone with the link can watch it---we'll be sharing it with folks
   from Amp, unless you don't want us to do that (get in touch via
-  Piazza). Put some effort into production values here: make a video
-  that you would be proud to show to someone who you're trying to get
-  a job with. The video should:
+  Piazza). We'll watch a bunch of them in class (again, get in touch
+  if you don't want that). Put some effort into production values
+  here: make a video that you would be proud to show to someone who
+  you're trying to get a job with. The video should:
 
   1. Describe the problem your project solves.
   2. Demonstrate how it works.
