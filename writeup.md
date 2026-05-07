@@ -45,6 +45,14 @@ specifications to begin with. The domains of computer science where
 specifications matter a lot---systems software, for example---were
 less exciting to students.
 
+Toward the end, we also toyed with a vision of "production engineer",
+where the student oversees the agent's actual development process and
+ensures it has access to sufficient tests, metrics, observability
+tooling, and feedback to make consistent progress. We found that the
+level of abstraction required to think about software development
+feedback loops was difficult for most students, and we also struggled
+to produce relevant lecture content besides test cases.
+
 Of course, part of the challenge in answering these questions was that
 it is genuinely unclear what the role of programmers will be in the
 future. As that gets clearer maybe the course vision will resolve.
