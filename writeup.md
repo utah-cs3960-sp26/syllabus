@@ -1,4 +1,5 @@
-# Lessons Learned from a Course on Vibe Coding
+Lessons Learned from a Course on Vibe Coding
+============================================
 
 From January to April 2026 we taught "Vibe Coding" to 60 University of
 Utah Computer Science undergraduates, mostly in their 3rd or 4th
@@ -6,103 +7,284 @@ year. They were excited about LLM coding agents but at the same time
 wary about the new technology, and also visibly nervous about the
 highly uncertain job market that they are about to be facing.
 
+# Course Vision
+
 Going into this, we had a lot of questions. Perhaps the most important
 of these were:
-1. What is the actual curriculum here?
-2. What relationship with code are we trying to promote, and how are
-   we going to do that?
 
-For example, one relationship with code could be "fire and forget"
-where the students write prompts and run code, but never actually
-edit, optimize, debug, profile, or even read the code. As computer
-science professors who love code, this is not the relationship that we
-were after---but it turned out to be surprisingly difficult to do
-better.
+1. What relationship with code are we trying to promote?
+2. What relationship with the agent are we trying to promote?
 
-For a curriculum, one place we turned was software engineering. Here,
-our belief was that only a small proportion of the courses required
-for a traditional CS degree is providing preparation for a world where
-every software developer is effectively a low-level manager,
-overseeing multiple AI agents. Of course, the true bottlenecks in
-software engineering have always been determining what software should
-actually be written, and then reliably creating software that is fit
-for some particular purpose, which will often include requirements
-such as usability, accessibility, platform constraints,
-security-critical use cases, and safety-critical use cases. What role,
-if any, does AI play in meeting these diverse requirements? More
-importantly, could we get the students on the path towards being able
-to sign off, as a software professional, on the fitness of a piece of
-code for its intended purpose? Even when some or most of the software
-was written by a coding agent?
+We started with negative examples. One relationship with code could be
+"fire and forget" where the students write prompts and run code, but
+never actually edit, optimize, debug, profile, or even read the code.
+One relationship with the agent could be "magic genie" where the
+student assumes the agent can do a good job of any task. As computer
+science professors who love code, this is not what we were after.
 
-We spent several lectures on testing, paying particular attention to
+But it turned out to be surprisingly difficult to do better!
+
+One vision is "manager", where the student is responsible for code
+existing and working, but delegates actually writing to code to
+subordinate agents. The manager's main skills are dividing large
+projects into small tasks that are within their workers' capabilities
+and then tracking completion. This was our initial preferred vision
+for the course, but we found it quite difficult to *teach* the
+relevant skills. We had a number of lectures on how software
+engineering works in industry and on the capabilities of models, but
+they may not have connected with students.
+
+Another vision is "architect", where the student writes a good
+specification (which may include tests, standards, formal
+specifications, or other things) and the agent is charged with
+implementing. We felt comfortable lecturing on this, since both of us
+are programming languages researchers. While this could probably make
+a coherent course, the projects students wanted to do were often
+music, interfaces, or games, for which it's difficult to write
+specifications to begin with. The domains of computer science where
+specifications matter a lot---systems software, for example---were
+less exciting to students.
+
+Of course, part of the challenge in answering these questions was that
+it is genuinely unclear what the role of programmers will be in the
+future. As that gets clearer maybe the course vision will resolve.
+
+# Curriculum
+
+For a curriculum, one place we turned was software engineering. Most
+traditional CS courses effectively focus on solo programmers. If every
+programmer is a manager (or, later, an architect), then we instead
+needed material that focuses on teams working in concert, which means
+software engineering. Of course, the true bottlenecks in software
+engineering have always been determining what software should actually
+be written, and then reliably creating software that is fit for some
+particular purpose, which will often include requirements such as
+usability, accessibility, platform constraints, security-critical use
+cases, and safety-critical use cases. What role, if any, does AI play
+in meeting these diverse requirements? More importantly, could we get
+the students on the path towards being able to sign off, as a software
+professional, on the fitness of a piece of code for its intended
+purpose? Even when some or most of the software was written by a
+coding agent?
+
+We didn't want to teach anything that would obsolete with improving
+model capabilities. We didn't teach prompt engineering tricks or
+recommend specific models for specific tasks. We wanted "time-tested"
+wisdom more than from AI-specific content. When we did cover AI we
+avoided math, so we didn't cover gradient descent or the attention
+mechanism itself (besides some vague hand-waving).
+
+We spent many lectures on testing, paying particular attention to
 automated test oracles, which of course combine well with randomized
 testing methods. We lectured on code review, specifications, software
 architecture, modularity, security, and formal verification. In all
 cases, our priority was to give the currently-accepted fundamentals in
 the topic, and then secondarily to tie the topic in to LLM-based
-software development. Our observation is that skill in these areas is
-likely to be significantly more important much earlier a software
-engineer's career than was previously the case.
+software development. Many students seemed to be seeing some of the
+more advanced content for the first time. Our observation is that
+skill in these areas is likely to be significantly more important much
+earlier a software engineer's career than was previously the case.
 
-The other half of our curriculum was less traditionally structured: it
-was an answer to the question "What do developers need to know about
-how modern LLMs and coding agents work, in order to use these tools
-effectively?"
+The other half of the curriculum attempted to explain the agents'
+capabilities and what the manager should do to make them successful.
+There were a few lectures on LLM basics, like what tokens are, how
+text is generated token by token, and how tool calls allow an LLM to
+code. Then there was a series of lectures on context management,
+memory, and version control. We figured that AI capabilities would
+continue improving, so exact capabilities or prompting tricks weren't
+worth teaching, but that any LLM-based system would be limited by what
+would make it into the LLM's context. We also hoped that describing
+how LLMs worked would allow students to see limitations and weaknesses
+instead of just assuming the LLM is good at everything.
 
-[Pavel elaborates here-- what were the topics? why were these the
-topics? etc.]
+In surveys we ran, students seemed to think both halves of the
+curriculum were quite valuable and interesting. Many students were
+especially appreciative to be taught how software development works in
+practice. It helped that both of us have industry experience to refer
+to, and it also helped that many students had had jobs and could
+relate their own experiences.
 
-For a coding agent, the students in our course used
-[Amp](https://ampcode.com/), which provides an LLM-backed CLI tool and
-also a VSCode plugin. Virtually all of the students preferred to use
-the plugin. The Amp folks were generous enough to give us several
-thousand dollars worth of credits, which was a key enabler for us to
-run this course. (Pavel say more about money?)
+That said, like lectures in any class, they weren't entirely
+successful. A memorable example was an assignment where students were
+supposed to write a prompt file with a specification, and the agent
+would then implement that specification using a prompt loop. We
+discovered that basically all students had actually generated their
+prompt files using ChatGPT or similar tools. When questioned, they
+said they did this because ChatGPT's prompt was "more detailed". Few
+seemed to realize the contradiction.
+
+We also made mistakes. The most notable is teaching "prompt loops" /
+"Ralph loops". While these are effective, we don't think any of our
+students reached the level of effectiveness with agents where prompt
+loops produces good software, and they are extraordinarily costly.
+Some students accidentally left their prompt loop running for too
+long, costing hundreds of dollars in tokens. It would be worth it if
+there was pedagogical value, but we didn't see much of one.
+
+# Course Structure
+
+Our course used [Amp](https://ampcode.com/) as its coding agent. Amp
+is a coding agent, available in VSCode or the CLI, which during the
+class used Claude Opus as its LLM. Virtually all of the students
+preferred to use the VS Code plugin. Many students had already used
+Codex, Claude, Copilot, or Gemini at jobs or internships, and they
+gave Amp high marks.
+
+A key question for future AI coding courses is cost. The Amp folks
+were generous enough to give us many thousand dollars worth of
+credits. We couldn't have run the course without that. Our total cost
+ended up being about $13,000, or a bit over $200 per student. We
+consciously tried not to rate limit students (which in a few cases
+lead to run-away spending where we had to intervene manually), but we
+don't think the course would have been the same if we'd tried to limit
+students, to, say, the bounds of a $20/month subscription. Tens of
+thousands of dollars is hard to come up with, so without corporate
+support we're not sure how to run the class.
 
 We structured Vibe Coding traditionally: during most class sessions,
 one of us would lecture for about an hour, leaving the final 20
-minutes for an in-class exercise. We gave 1-2 reading assignments each
+minutes for an in-class exercise. The in-class exercise was graded,
+but mostly to enforce attendance. We gave 1-2 reading assignments each
 week, these were usually blog posts or other web-based articles, and
 were occasionally a section from some paper; students had to answer a
-few questions about the assigned material.
+few questions about the assigned material. Readings were graded to
+ensure that students read the material, but (after experimenting) we
+found that Claude Opus did a perfectly fine job grading readings. This
+made readings very easy to assign and made them effective at
+delivering additional content.
 
-The bulk of the coursework for Vibe Coding fit into three programming
-projets: a text editor, a physics simulation, and a self-directed
-final project.
+The bulk of the coursework for Vibe Coding, however, fit into three
+programming projects: a text editor, a physics simulation, and a
+self-directed final project. The text editor stretched over three
+separate assignments (feature implementation; code review and testing;
+and performance optimization), while the physics simulator and final
+projects were shorter. At the end of each assignment, we had a "demo
+day" where each student had to show off their text editor to one of
+the three of us (John, Pavel, and our TA Yumeng), answer some
+questions about their implementation, talk us through their design
+choices, etc.
 
-The text editor stretched over nine weeks. Initially,
-they were to just bring up a text editor built using PyQt, implementing
-two features from a list that we provided, including:
-- automatic indentation and bracket/quote matching
-- multiple cursors and rectangular selection
-- custom fonts, colors, and keyboard shortcuts
-- multi-language syntax highlighting
-- find and repalce, including multi-find-and-replace
-During the third week of class we had a "demo day" where each student
-had to show off their text editor to one of the three of us (John, Pavel,
-and our TA), answer some questions about their implementation,
-talk us through their design choices, etc.
+The point was for students to demonstrate ownership of the code.
+Reviews were mixed but, we think, for the right reasons. One student
+wrote, for example, "it was challenging to express my knowledge [...]
+because I didn't have it." That said, these "demo days" were not
+scalable (they needed a whole course period and we still only had a
+few minutes per student) and we never came up with a better way to
+enforce ownership and responsibility. Probably a good fraction of the
+class never engaged seriously with any of the code they "wrote". This
+was very apparent during the testing assignment, where students had to
+achieve 100% code coverage for their text editor. We'd ask students
+to, say, show us the find-replace tests, and those tests would often
+"cheat", for example, triggering a find-replace (to achieve coverage)
+but not actually checking that the find-replace was done correctly.
+Testing correspondingly didn't make the editors much less buggy.
 
-For the second part of the text editor project, we assigned each
-student to take a different student's code base and implement a
-feature that that student had not implemented yet. This was to be
-boxed up as a pull request that they had to convince the code owner to
-merge. The following week, each student had create tests that achieved
-100% line coverage of their editor (with another student's feature
-merged), or else document any code that could not be covered. We had a
-second demo day where students had to demonstrate their testing
-strategy: how did they achieve coverage of the various features of
-their code? What code could not be covered and why?
+One surprise was that students would typically try to understand the
+AI-written code by asking the AI. This was very clear during demo
+days. We'd ask students, say, what chunk size they used for something,
+and students would quite visibly have no idea where that was even
+defined. Thinking it over, the traditional CS curriculum doesn't
+really teach *reading* code. Students focus on *writing* code, and
+reading is learned as a byproduct. Perhaps future CS education should
+explicitly teach code reading, including techniques like grepping for
+related abstractions, traversing callers and callees, and reasoning
+about control flow.
 
-For the final 
+Our hope with these projects was that *visual* software would provide
+room for creativity but also have challenging specification,
+correctness, and performance constraints where students would need to
+guide the LLM. To some extent this was correct. But a challenge we
+didn't anticipate was student skill level. We made basically no
+attempt to teach students how text editors or physics simulators
+worked. Pre-AI, that would have resulted in all but a few students
+failing to write one. AI agents substantially raised the
+floor---basically all students produced working editors and
+simulators---but also increased dispersion across skill levels
+significantly. The strongest students could come up with and enforce
+an architecture for their agent to follow. The weakest students,
+though, quickly felt like there was nothing they could contribute at
+all.
 
-- 3 programming projects
-  - a many-part assignment on building a text editor
-  - a shorter 2-week assignment building a physics simulator
-  - a 3-week self-directed final project
-- 4 "demo days" where the 3 instructors spend approx 4 minutes per
-  student interviewing them about their project and its design and implementation
+Visual software is also quite flexible: there are many different text
+editors that work in quite different ways. Ideally, students would
+make bold design choices, but they mostly didn't, leaving design
+decisions to the AI. The AI's choices were largely tasteless. This had
+the funny side effect that almost all students' text editors were
+terrible (buggy, unintuitive, lacking features, etc) and so were
+widely hated. The physics simulator was better---there was less room
+for choice---though it had the weakness that students who could
+imagine how a text editor works often had no idea how a physics
+simulator would.
+
+This was most notable during our most difficult assignment, which
+required a low-latency find-replace function in their text editor.
+Without AI, implementing something like an `mmap`-based piece table
+with a line index and batched find-replace jobs would be beyond all
+but the very strongest students. With AI, writing and debugging the
+code wasn't a problem, but many students had a foggy-enough idea of
+allocation, copies, and strings---let alone virtual memory and text
+encodings---that they couldn't even effectively prompt the AI. In
+retrospect, we think attempts to simply "raise the bar" thanks to AI
+assistance don't really work. To do that, we would need to teach many
+foundational concepts (like memory management) at a more rigorous but
+conceptual basis.
+
+We *had* hoped that a long-running assignment would force students to
+"dig their way out" of their own mistakes. Software engineering
+courses often attempt this, and AI agents are great at "digging
+holes", so to speak. Unfortunately, students were quite limited in
+their willingness or ability to "dig their way out" via refactorings,
+tests, and specifications. It's possible that better assignment design
+would help (perhaps we could have an assignment to refactor their text
+editor into model-view-controller form, or into modular plugins, or
+something) but I think the long-running project was a mistake how we
+ran it. More shorter projects would have been more effective,
+especially since students could build complex software very quickly.
+
+For the final project, we let students propose a project of their own.
+Naturally, there were many video games, and a surprising number of
+audio-focused projects, but also a diverse array of surprising
+personal projects. The projects were generally more impressive than in
+prior non-AI classes we've taught---one student wrote a billiards
+simulator that hooked up to a real physics engine and could use
+computer vision to read a real pool table---but in general the
+distribution of quality seemed similar to prior years.
+
+In any case, we promised (and held to) A grades for essentially all
+students who put effort into the class. This lifted the burden of
+developing fair assessments, which would be a big challenge with how
+we ran the class. An essential challenge is that *detailed* homework
+assignments can be completed autonomously by AI agents, while *vague*
+homework assignments are hard to grade with a high bar, and AI agents
+are extremely effective at meeting vague, low bars. AI code is often
+tasteless, but grading taste is difficult.
+
+# Future Offerings
+
+It's not clear that we'll ever offer *this* course again, but surely
+every Computing department will be offering classes with AI coding
+soon. Our experience suggests that these classes can be valuable for
+students and can cover important material. Overall, we think of our
+class as a success. That said, any such offering should confront a few
+questions head-on.
+
+First, costs. Agentic coding is expensive, and tens of thousands of
+dollars are scarce in academia. How will tokens be paid for?
+
+Second, vision. What relationship is the course trying to encourage
+with a student's code and agents? This should drive the curriculum.
+
+Third, skills. What specific skills and knowledge are students
+lacking? We think there are many under-developed skills that could be
+at the center of such a course. Code reading, core concepts,
+debugging, performance engineering, and others all stand out.
+By definition, these skills must complement AI.
+
+Fourth, assessment. Reading and grading AI-written code makes no
+sense. Neither does writing detailed assignments for students to hand
+off to AI. Ideally one would assess whatever skills one is teaching.
+
+---------------
 
 lessons learned
 
